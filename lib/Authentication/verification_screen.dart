@@ -11,49 +11,54 @@ class VerificationScreen extends StatefulWidget {
 
 class _VerificationScreenState extends State<VerificationScreen> {
   final otpController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Column(
         children: [
-          
           Container(
-            height: MediaQuery.of(context).size.height / 3.4,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: Color(0xFF121223)),
+            height: screenHeight * 0.33, // header height
+            width: screenWidth,
+            decoration: const BoxDecoration(color: Color(0xFF121223)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               Row(
+                Row(
                   children: [
                     GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: EdgeInsets.only(left: screenWidth * 0.05),
                         child: Image.asset(
                           "assets/images/Icon1.png",
                           color: Colors.white,
+                          height: screenHeight * 0.03,
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: screenHeight * 0.05),
                 Text(
                   "Verification",
                   style: GoogleFonts.sen(
                     fontWeight: FontWeight.w700,
-                    fontSize: 30,
+                    fontSize: screenWidth * 0.08,
                     color: Colors.white,
                   ),
                 ),
                 Text(
-                  "we have sent a code to your email\n            example@gmail.com",
+                  "we have sent a code to your email\nexample@gmail.com",
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.sen(
                     fontWeight: FontWeight.w400,
-                    fontSize: 16,
+                    fontSize: screenWidth * 0.04,
                     color: Colors.white,
                   ),
                 ),
@@ -64,31 +69,37 @@ class _VerificationScreenState extends State<VerificationScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 20, left: 40),
+                padding: EdgeInsets.only(
+                  top: screenHeight * 0.02,
+                  left: screenWidth * 0.08,
+                ),
                 child: Text(
                   "CODE",
                   style: GoogleFonts.sen(
                     fontWeight: FontWeight.w400,
-                    fontSize: 13,
+                    fontSize: screenHeight * 0.016,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20, right: 40),
+                padding: EdgeInsets.only(
+                  top: screenHeight * 0.02,
+                  right: screenWidth * 0.08,
+                ),
                 child: Text(
-                  "Resend in.50sec",
+                  "Resend in 50 sec",
                   style: GoogleFonts.sen(
                     fontWeight: FontWeight.w400,
-                    fontSize: 13,
+                    fontSize: screenHeight * 0.016,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: screenHeight * 0.015),
           Center(
             child: SizedBox(
-              width: 330,
+              width: screenWidth * 0.85,
               child: PinCodeTextField(
                 appContext: context,
                 length: 4,
@@ -98,8 +109,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(8),
-                  fieldHeight: 60,
-                  fieldWidth: 60,
+                  fieldHeight: screenHeight * 0.07,
+                  fieldWidth: screenWidth * 0.18,
                   activeFillColor: Colors.grey.shade200,
                   inactiveFillColor: Colors.grey.shade200,
                   selectedFillColor: Colors.white,
@@ -110,22 +121,22 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: screenHeight * 0.03),
           GestureDetector(
             onTap: () {},
             child: Container(
-              height: 62,
-              width: 327,
+              height: screenHeight * 0.07,
+              width: screenWidth * 0.85,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFFFF7622),
+                color: const Color(0xFFFF7622),
               ),
               child: Center(
                 child: Text(
                   "VERIFY",
                   style: GoogleFonts.sen(
                     fontWeight: FontWeight.w700,
-                    fontSize: 14,
+                    fontSize: screenWidth * 0.04,
                     color: Colors.white,
                   ),
                 ),

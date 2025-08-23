@@ -21,6 +21,9 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
   ];
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: ListView(
         children: [
@@ -30,9 +33,9 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                 Stack(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 30,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.05,
+                        vertical: screenHeight * 0.03,
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,6 +47,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                             child: Image.asset(
                               "assets/images/Icon1.png",
                               color: Colors.white,
+                              width: screenWidth * 0.07,
                             ),
                           ),
                           GestureDetector(
@@ -51,6 +55,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                             child: Image.asset(
                               "assets/images/More.png",
                               color: Colors.white,
+                              width: screenWidth * 0.07,
                             ),
                           ),
                         ],
@@ -63,15 +68,18 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                       ),
                       child: Image.asset(
                         "assets/images/healthy.jpg",
-                        height: MediaQuery.of(context).size.height / 2.7,
-                        width: MediaQuery.of(context).size.width,
+                        height: screenHeight * 0.37,
+                        width: screenWidth,
                         fit: BoxFit.cover,
                       ),
                     ),
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 30),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Row(
@@ -79,47 +87,50 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                           Image.asset(
                             "assets/images/Star.png",
                             color: Color(0xFFFF7622),
+                            width: screenWidth * 0.05,
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: screenWidth * 0.02),
                           Text(
                             "4.7",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                              fontSize: screenWidth * 0.04,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: screenWidth * 0.04),
                       Row(
                         children: [
                           Image.asset(
                             "assets/images/Car.png",
                             color: Color(0xFFFF7622),
+                            width: screenWidth * 0.05,
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: screenWidth * 0.02),
                           Text(
                             "Free",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                              fontSize: screenWidth * 0.04,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: screenWidth * 0.04),
                       Row(
                         children: [
                           Image.asset(
                             "assets/images/Watch.png",
                             color: Color(0xFFFF7622),
+                            width: screenWidth * 0.05,
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: screenWidth * 0.02),
                           Text(
                             "20 min",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                              fontSize: screenWidth * 0.04,
                             ),
                           ),
                         ],
@@ -128,14 +139,17 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.02,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Spicy Restarunant",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.055,
                         ),
                       ),
                     ],
@@ -143,27 +157,30 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 10),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.01,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Maecenas sed diam eget risus varius blandit sit\namet non magna. Integer posuere erat a ante\nvenenatis dapibus posuere velit aliquet",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.038,
                         ),
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(top: screenHeight * 0.02),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: screenWidth * 0.05),
                           child: GestureDetector(
                             onTap: () {
                               Navigator.push(
@@ -174,8 +191,8 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                               );
                             },
                             child: Container(
-                              height: 40,
-                              width: 90,
+                              height: screenHeight * 0.05,
+                              width: screenWidth * 0.22,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.white70,
@@ -191,7 +208,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                                   "Burger",
                                   style: GoogleFonts.sen(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 16,
+                                    fontSize: screenWidth * 0.035,
                                   ),
                                 ),
                               ),
@@ -199,10 +216,10 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 15),
+                          padding: EdgeInsets.only(left: screenWidth * 0.035),
                           child: Container(
-                            height: 40,
-                            width: 95,
+                            height: screenHeight * 0.05,
+                            width: screenWidth * 0.24,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white70,
@@ -218,17 +235,17 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                                 "Sandwich",
                                 style: GoogleFonts.sen(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 16,
+                                  fontSize: screenWidth * 0.035,
                                 ),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 15),
+                          padding: EdgeInsets.only(left: screenWidth * 0.035),
                           child: Container(
-                            height: 40,
-                            width: 90,
+                            height: screenHeight * 0.05,
+                            width: screenWidth * 0.22,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white70,
@@ -244,17 +261,17 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                                 "Pizza",
                                 style: GoogleFonts.sen(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 16,
+                                  fontSize: screenWidth * 0.035,
                                 ),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 15),
+                          padding: EdgeInsets.only(left: screenWidth * 0.035),
                           child: Container(
-                            height: 40,
-                            width: 95,
+                            height: screenHeight * 0.05,
+                            width: screenWidth * 0.24,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white70,
@@ -270,7 +287,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                                 "Sandwich",
                                 style: GoogleFonts.sen(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 16,
+                                  fontSize: screenWidth * 0.035,
                                 ),
                               ),
                             ),
@@ -280,23 +297,27 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: screenHeight * 0.03),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: screenWidth * 0.05),
                   child: Row(
                     children: [
                       Text(
                         "Burger(10)",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.055,
                         ),
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    top: screenHeight * 0.03,
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -306,75 +327,79 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                     },
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 163 / 180,
+                        childAspectRatio: 0.7,
                         crossAxisCount: 2,
-                        mainAxisSpacing: 5,
-                        crossAxisSpacing: 5,
+                        mainAxisSpacing: screenHeight * 0.01,
+                        crossAxisSpacing: screenWidth * 0.02,
                       ),
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: 4,
                       itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white70,
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white70,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.04,
+                              vertical: screenHeight * 0.01,
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                left: 20,
-                                right: 20,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(burgerImages[index]),
-                                  Text(
-                                    "Burger Bistro",
-                                    style: GoogleFonts.sen(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 16,
-                                    ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  burgerImages[index],
+                                  height: screenHeight * 0.1,
+                                ),
+                                SizedBox(height: screenHeight * 0.01),
+                                Text(
+                                  "Burger Bistro",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: screenHeight * 0.018,
                                   ),
-                                  Text(
-                                    "Rose Garden",
-                                    style: GoogleFonts.sen(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13,
-                                    ),
+                                ),
+                                SizedBox(height: screenHeight * 0.005),
+                                Text(
+                                  "Rose Garden",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: screenHeight * 0.015,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "\$40",
-                                        style: GoogleFonts.sen(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w700,
+                                ),
+                                SizedBox(height: screenHeight * 0.01),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "\$40",
+                                      style: GoogleFonts.sen(
+                                        fontSize: screenHeight * 0.018,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Container(
+                                      height: screenHeight * 0.04,
+                                      width: screenWidth * 0.09,
+                                      decoration: ShapeDecoration(
+                                        shape: CircleBorder(),
+                                        color: Color(0xFFFF7622),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          "assets/images/Plus.png",
+                                          color: Colors.white,
+                                          height: screenHeight * 0.018,
                                         ),
                                       ),
-                                      Container(
-                                        height: 35,
-                                        width: 35,
-                                        decoration: ShapeDecoration(
-                                          shape: CircleBorder(),
-                                          color: Color(0xFFFF7622),
-                                        ),
-                                        child: Center(
-                                          child: Image.asset(
-                                            "assets/images/Plus.png",
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         );
@@ -382,6 +407,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 40),
               ],
             ),
           ),

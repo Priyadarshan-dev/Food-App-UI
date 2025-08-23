@@ -1,65 +1,219 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Components/text_field_component.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class EditProfilePage extends StatelessWidget {
+class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
 
   @override
+  State<EditProfilePage> createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  final _fullNameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _bioController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(screenWidth * 0.05),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Back + Title
               Row(
                 children: [
-                  IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.arrow_back),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.12,
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.grey.shade200,
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          "assets/images/Icon1.png",
+                          color: Colors.black,
+                          height: screenHeight * 0.022,
+                        ),
+                      ),
+                    ),
                   ),
-                  const Text(
+                  SizedBox(width: screenWidth * 0.025),
+                  Text(
                     "Edit Profile",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.sen(
+                      fontSize: screenWidth * 0.04,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
 
               // Profile Pic
               Stack(
                 children: [
-                  const CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage("assets/profile.jpg"),
+                  Container(
+                    height: screenHeight * 0.15,
+                    width: screenWidth * 0.3,
+                    decoration: ShapeDecoration(shape: CircleBorder()),
+                    child: Image.asset("assets/images/boy.png"),
                   ),
                   Positioned(
                     bottom: 0,
                     right: 0,
                     child: CircleAvatar(
-                      radius: 15,
-                      backgroundColor: Colors.orange,
-                      child: const Icon(
+                      radius: screenWidth * 0.05,
+                      backgroundColor: Color(0xFFFF7622),
+                      child: Icon(
                         Icons.edit,
-                        size: 16,
+                        size: screenWidth * 0.04,
                         color: Colors.white,
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 30),
-
-              const SizedBox(height: 20),
-              // Save Button
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50),
-                  backgroundColor: Colors.orange,
+              SizedBox(height: screenHeight * 0.03),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.028),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "FULL NAME",
+                      style: GoogleFonts.sen(
+                        fontSize: screenWidth * 0.035,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
-                child: const Text("SAVE"),
+              ),
+              SizedBox(height: screenHeight * 0.01),
+              TextFieldComponent(
+                controller: _fullNameController,
+                hintText: "",
+                obscureText: false,
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.028),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "EMAIL",
+                      style: GoogleFonts.sen(
+                        fontSize: screenWidth * 0.035,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.01),
+              TextFieldComponent(
+                controller: _emailController,
+                hintText: "",
+                obscureText: false,
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.028),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "PHONE NUMBER",
+                      style: GoogleFonts.sen(
+                        fontSize: screenWidth * 0.035,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.01),
+              TextFieldComponent(
+                controller: _phoneController,
+                hintText: "",
+                obscureText: false,
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.028),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "BIO",
+                      style: GoogleFonts.sen(
+                        fontSize: screenWidth * 0.035,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.01),
+              SizedBox(
+                height: screenHeight * 0.12,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.02,
+                    right: screenWidth * 0.02,
+                  ),
+                  child: TextField(
+                    expands: true,
+                    maxLines: null,
+                    minLines: null,
+                    controller: _bioController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(screenWidth * 0.03),
+                      ),
+                    ),
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.035,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.06),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  height: screenHeight * 0.07,
+                  width: screenWidth * 0.8,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(screenWidth * 0.03),
+                    color: Color(0xFFFF7622),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "SAVE",
+                      style: GoogleFonts.sen(
+                        fontSize: screenWidth * 0.04,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

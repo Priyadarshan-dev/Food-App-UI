@@ -6,6 +6,9 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -13,51 +16,65 @@ class HistoryPage extends StatelessWidget {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 40),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Food",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: screenWidth * 0.05),
                       Text(
                         "Completed",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w700,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                           color: Color(0xFF059C6A),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: Divider(thickness: 0.5),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 15),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.02,
+                  ),
                   child: SizedBox(
-                    height: 140,
+                    height: screenHeight * 0.18,
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(
+                                screenWidth * 0.03,
+                              ),
+                              child: Image.asset(
+                                "assets/images/pizza2.jpg",
+                                height: screenHeight * 0.07,
+                                width: screenWidth * 0.14,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.05,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -67,35 +84,35 @@ class HistoryPage extends StatelessWidget {
                                         "Pizza Hut",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 140),
+                                      SizedBox(width: screenWidth * 0.3),
                                       Text(
                                         "#162432",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14,
+                                          fontSize: screenWidth * 0.035,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenHeight * 0.01),
                                   Row(
                                     children: [
                                       Text(
                                         "\$35.25",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 30),
+                                      SizedBox(width: screenWidth * 0.07),
                                       Text(
                                         "29 JAN, 12.30 . 03 Items",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14,
+                                          fontSize: screenWidth * 0.035,
                                         ),
                                       ),
                                     ],
@@ -105,32 +122,27 @@ class HistoryPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: screenHeight * 0.03),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: 38,
-                                width: 139,
+                                height: screenHeight * 0.045,
+                                width: screenWidth * 0.35,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border(
-                                    top: BorderSide(color: Color(0xFFFF7622)),
-                                    bottom: BorderSide(
-                                      color: Color(0xFFFF7622),
-                                    ),
-                                    right: BorderSide(color: Color(0xFFFF7622)),
-                                    left: BorderSide(color: Color(0xFFFF7622)),
+                                  borderRadius: BorderRadius.circular(
+                                    screenWidth * 0.03,
                                   ),
+                                  border: Border.all(color: Color(0xFFFF7622)),
                                 ),
                                 child: Center(
                                   child: Text(
                                     "Rate",
                                     style: GoogleFonts.sen(
                                       fontWeight: FontWeight.w700,
-                                      fontSize: 14,
+                                      fontSize: screenWidth * 0.035,
                                       color: Color(0xFFFF7622),
                                     ),
                                   ),
@@ -140,12 +152,16 @@ class HistoryPage extends StatelessWidget {
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 20),
+                                padding: EdgeInsets.only(
+                                  right: screenWidth * 0.05,
+                                ),
                                 child: Container(
-                                  height: 38,
-                                  width: 139,
+                                  height: screenHeight * 0.045,
+                                  width: screenWidth * 0.35,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
+                                    borderRadius: BorderRadius.circular(
+                                      screenWidth * 0.03,
+                                    ),
                                     color: Color(0xFFFF7622),
                                   ),
                                   child: Center(
@@ -153,7 +169,7 @@ class HistoryPage extends StatelessWidget {
                                       "Re-Order",
                                       style: GoogleFonts.sen(
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 14,
+                                        fontSize: screenWidth * 0.035,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -169,51 +185,65 @@ class HistoryPage extends StatelessWidget {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 40),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Food",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: screenWidth * 0.05),
                       Text(
                         "Completed",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w700,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                           color: Color(0xFF059C6A),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: Divider(thickness: 0.5),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 15),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.02,
+                  ),
                   child: SizedBox(
-                    height: 140,
+                    height: screenHeight * 0.18,
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(
+                                screenWidth * 0.03,
+                              ),
+                              child: Image.asset(
+                                "assets/images/mcd.jpg",
+                                height: screenHeight * 0.07,
+                                width: screenWidth * 0.14,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.05,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -223,35 +253,35 @@ class HistoryPage extends StatelessWidget {
                                         "Pizza Hut",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 140),
+                                      SizedBox(width: screenWidth * 0.3),
                                       Text(
                                         "#162432",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14,
+                                          fontSize: screenWidth * 0.035,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenHeight * 0.01),
                                   Row(
                                     children: [
                                       Text(
                                         "\$35.25",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 30),
+                                      SizedBox(width: screenWidth * 0.07),
                                       Text(
                                         "29 JAN, 12.30 . 03 Items",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14,
+                                          fontSize: screenWidth * 0.035,
                                         ),
                                       ),
                                     ],
@@ -261,32 +291,27 @@ class HistoryPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: screenHeight * 0.03),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: 38,
-                                width: 139,
+                                height: screenHeight * 0.045,
+                                width: screenWidth * 0.35,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border(
-                                    top: BorderSide(color: Color(0xFFFF7622)),
-                                    bottom: BorderSide(
-                                      color: Color(0xFFFF7622),
-                                    ),
-                                    right: BorderSide(color: Color(0xFFFF7622)),
-                                    left: BorderSide(color: Color(0xFFFF7622)),
+                                  borderRadius: BorderRadius.circular(
+                                    screenWidth * 0.03,
                                   ),
+                                  border: Border.all(color: Color(0xFFFF7622)),
                                 ),
                                 child: Center(
                                   child: Text(
                                     "Rate",
                                     style: GoogleFonts.sen(
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 14,
+                                      fontSize: screenWidth * 0.035,
                                       color: Color(0xFFFF7622),
                                     ),
                                   ),
@@ -296,12 +321,16 @@ class HistoryPage extends StatelessWidget {
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 20),
+                                padding: EdgeInsets.only(
+                                  right: screenWidth * 0.05,
+                                ),
                                 child: Container(
-                                  height: 38,
-                                  width: 139,
+                                  height: screenHeight * 0.045,
+                                  width: screenWidth * 0.35,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
+                                    borderRadius: BorderRadius.circular(
+                                      screenWidth * 0.03,
+                                    ),
                                     color: Color(0xFFFF7622),
                                   ),
                                   child: Center(
@@ -309,7 +338,7 @@ class HistoryPage extends StatelessWidget {
                                       "Re-Order",
                                       style: GoogleFonts.sen(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 14,
+                                        fontSize: screenWidth * 0.035,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -325,51 +354,65 @@ class HistoryPage extends StatelessWidget {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 40),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Food",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: screenWidth * 0.05),
                       Text(
                         "Completed",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w700,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                           color: Color(0xFF059C6A),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: Divider(thickness: 0.5),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 15),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.02,
+                  ),
                   child: SizedBox(
-                    height: 200,
+                    height: screenHeight * 0.18,
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(
+                                screenWidth * 0.03,
+                              ),
+                              child: Image.asset(
+                                "assets/images/starbucks.jpg",
+                                height: screenHeight * 0.07,
+                                width: screenWidth * 0.14,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.05,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -379,35 +422,35 @@ class HistoryPage extends StatelessWidget {
                                         "Pizza Hut",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 140),
+                                      SizedBox(width: screenWidth * 0.3),
                                       Text(
                                         "#162432",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14,
+                                          fontSize: screenWidth * 0.035,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenHeight * 0.01),
                                   Row(
                                     children: [
                                       Text(
                                         "\$35.25",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 30),
+                                      SizedBox(width: screenWidth * 0.07),
                                       Text(
                                         "29 JAN, 12.30 . 03 Items",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14,
+                                          fontSize: screenWidth * 0.035,
                                         ),
                                       ),
                                     ],
@@ -417,32 +460,27 @@ class HistoryPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: screenHeight * 0.03),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: 38,
-                                width: 139,
+                                height: screenHeight * 0.045,
+                                width: screenWidth * 0.35,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border(
-                                    top: BorderSide(color: Color(0xFFFF7622)),
-                                    bottom: BorderSide(
-                                      color: Color(0xFFFF7622),
-                                    ),
-                                    right: BorderSide(color: Color(0xFFFF7622)),
-                                    left: BorderSide(color: Color(0xFFFF7622)),
+                                  borderRadius: BorderRadius.circular(
+                                    screenWidth * 0.03,
                                   ),
+                                  border: Border.all(color: Color(0xFFFF7622)),
                                 ),
                                 child: Center(
                                   child: Text(
                                     "Rate",
                                     style: GoogleFonts.sen(
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 14,
+                                      fontSize: screenWidth * 0.035,
                                       color: Color(0xFFFF7622),
                                     ),
                                   ),
@@ -452,12 +490,16 @@ class HistoryPage extends StatelessWidget {
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 20),
+                                padding: EdgeInsets.only(
+                                  right: screenWidth * 0.05,
+                                ),
                                 child: Container(
-                                  height: 38,
-                                  width: 139,
+                                  height: screenHeight * 0.045,
+                                  width: screenWidth * 0.35,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
+                                    borderRadius: BorderRadius.circular(
+                                      screenWidth * 0.03,
+                                    ),
                                     color: Color(0xFFFF7622),
                                   ),
                                   child: Center(
@@ -465,7 +507,7 @@ class HistoryPage extends StatelessWidget {
                                       "Re-Order",
                                       style: GoogleFonts.sen(
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 14,
+                                        fontSize: screenWidth * 0.035,
                                         color: Colors.white,
                                       ),
                                     ),

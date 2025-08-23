@@ -7,29 +7,36 @@ class OrderConfirmatioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/surprise.png", height: 207, width: 228),
-            SizedBox(height: 10),
+            Image.asset(
+              "assets/images/surprise.png",
+              height: screenHeight * 0.26,
+              width: screenWidth * 0.58,
+            ),
+            SizedBox(height: screenHeight * 0.012),
             Center(
               child: Text(
                 "Congratulations!",
                 style: GoogleFonts.sen(
                   fontWeight: FontWeight.w700,
-                  fontSize: 24,
+                  fontSize: screenWidth * 0.06,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.025),
             Center(
               child: Text(
                 "You succesfully maked a payment",
                 style: GoogleFonts.sen(
                   fontWeight: FontWeight.w400,
-                  fontSize: 14,
+                  fontSize: screenWidth * 0.035,
                 ),
               ),
             ),
@@ -38,11 +45,11 @@ class OrderConfirmatioPage extends StatelessWidget {
                 "enjoy our service!",
                 style: GoogleFonts.sen(
                   fontWeight: FontWeight.w400,
-                  fontSize: 14,
+                  fontSize: screenWidth * 0.035,
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: screenHeight * 0.037),
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -51,8 +58,8 @@ class OrderConfirmatioPage extends StatelessWidget {
                 );
               },
               child: Container(
-                height: 62,
-                width: 327,
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.8,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Color(0xFFFF7622),
@@ -62,7 +69,7 @@ class OrderConfirmatioPage extends StatelessWidget {
                     "TRACK ORDER",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w700,
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.04,
                       color: Colors.white,
                     ),
                   ),

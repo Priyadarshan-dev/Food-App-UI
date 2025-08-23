@@ -16,8 +16,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    // MediaQuery values
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -27,7 +32,10 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 30),
+                      padding: EdgeInsets.only(
+                        top: screenHeight * 0.025,
+                        left: screenWidth * 0.05,
+                      ),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -38,8 +46,8 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         child: Container(
-                          height: 45,
-                          width: 45,
+                          height: screenHeight * 0.055,
+                          width: screenHeight * 0.055,
                           decoration: ShapeDecoration(
                             shape: CircleBorder(),
                             color: Colors.grey.shade200,
@@ -50,9 +58,9 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 15),
+                    SizedBox(width: screenWidth * 0.04),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.only(top: screenHeight * 0.025),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -60,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                             "DELEVIER TO",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w700,
-                              fontSize: 12,
+                              fontSize: screenWidth * 0.03,
                               color: Color(0xFFFF7622),
                             ),
                           ),
@@ -68,15 +76,18 @@ class _HomePageState extends State<HomePage> {
                             "Halal Lab office",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
-                              fontSize: 14,
+                              fontSize: screenWidth * 0.035,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(width: 150),
+                    Spacer(),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.only(
+                        top: screenHeight * 0.025,
+                        right: screenWidth * 0.05,
+                      ),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -85,8 +96,8 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         child: Container(
-                          height: 45,
-                          width: 45,
+                          height: screenHeight * 0.055,
+                          width: screenHeight * 0.055,
                           decoration: ShapeDecoration(
                             shape: CircleBorder(),
                             color: Colors.black,
@@ -102,17 +113,21 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.025),
+
+                // Greeting
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 5),
+                      padding: EdgeInsets.only(
+                        left: screenWidth * 0.08,
+                        right: screenWidth * 0.01,
+                      ),
                       child: Text(
                         "Hey Halal,",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
                     ),
@@ -120,25 +135,18 @@ class _HomePageState extends State<HomePage> {
                       "Good Afternoon!",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w700,
-                        fontSize: 16,
+                        fontSize: screenWidth * 0.04,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SearchPage()),
-                    );
-                  },
-                  child: TextFieldComponent(
-                    controller: _searchController,
-                    hintText: 'Search dishes, restaurants',
-                    obscureText: false,
-                  ),
+                SizedBox(height: screenHeight * 0.025),
+                TextFieldComponent(
+                  controller: _searchController,
+                  hintText: 'Search dishes, restaurants',
+                  obscureText: false,
                 ),
+                // Search
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -148,128 +156,81 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: Text("Search"),
                 ),
-                SizedBox(height: 20),
+
+                SizedBox(height: screenHeight * 0.020),
+
+                // Categories Header
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 30),
+                      padding: EdgeInsets.only(left: screenWidth * 0.08),
                       child: Text(
                         "All Categories",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.05,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 20),
+                      padding: EdgeInsets.only(right: screenWidth * 0.05),
                       child: Row(
                         children: [
                           Text(
                             "See All",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                              fontSize: screenWidth * 0.04,
                             ),
                           ),
-                          Icon(Icons.arrow_forward_ios, size: 15),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            size: screenWidth * 0.035,
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+
+                SizedBox(height: screenHeight * 0.025),
+
+                // Category Scroll
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 30),
-                        child: Container(
-                          height: 122,
-                          width: 122,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.grey.shade200,
-                          ),
-                          child: Column(
-                            children: [
-                              SizedBox(height: 15),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/images/pizza1.png",
-                                    height: 81,
-                                    width: 96,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: screenWidth * 0.06),
+                    child: Row(
+                      children: [
+                        _buildCategoryCard(
+                          screenHeight,
+                          screenWidth,
+                          "assets/images/pizza1.png",
                         ),
-                      ),
-
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Container(
-                          height: 122,
-                          width: 122,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.grey.shade200,
-                          ),
-                          child: Column(
-                            children: [
-                              SizedBox(height: 15),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/images/burger.png",
-                                    height: 81,
-                                    width: 96,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                        SizedBox(width: screenWidth * 0.05),
+                        _buildCategoryCard(
+                          screenHeight,
+                          screenWidth,
+                          "assets/images/burger.png",
                         ),
-                      ),
-
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: Container(
-                          height: 122,
-                          width: 122,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.grey.shade200,
-                          ),
-                          child: Column(
-                            children: [
-                              SizedBox(height: 15),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/images/pizza1.png",
-                                    height: 81,
-                                    width: 96,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                        SizedBox(width: screenWidth * 0.05),
+                        _buildCategoryCard(
+                          screenHeight,
+                          screenWidth,
+                          "assets/images/pizza1.png",
                         ),
-                      ),
-                    ],
+                        SizedBox(width: screenWidth * 0.08),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(height: 30),
+
+                SizedBox(height: screenHeight * 0.04),
+
+                // Open Restaurants
                 Padding(
-                  padding: const EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -277,28 +238,31 @@ class _HomePageState extends State<HomePage> {
                         "Open Restaurants",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.05,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20),
-                        child: Row(
-                          children: [
-                            Text(
-                              "See All",
-                              style: GoogleFonts.sen(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                              ),
+                      Row(
+                        children: [
+                          Text(
+                            "See All",
+                            style: GoogleFonts.sen(
+                              fontWeight: FontWeight.w400,
+                              fontSize: screenWidth * 0.04,
                             ),
-                            Icon(Icons.arrow_forward_ios, size: 15),
-                          ],
-                        ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            size: screenWidth * 0.035,
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+
+                SizedBox(height: screenHeight * 0.025),
+
+                // Restaurants List
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -316,15 +280,15 @@ class _HomePageState extends State<HomePage> {
                     imageAsset: 'assets/images/healthy.jpg',
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.025),
                 RestaurantCard(
                   name: 'Rose Garden Restaurant',
                   rating: 4.7,
                   delivery: 'Free',
                   time: '20 min',
-                  imageAsset: 'assets/images/fruit2.jpg',
+                  imageAsset: "assets/images/nonveg.jpg",
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.025),
                 RestaurantCard(
                   name: 'Rose Garden Restaurant',
                   rating: 4.7,
@@ -332,10 +296,32 @@ class _HomePageState extends State<HomePage> {
                   time: '20 min',
                   imageAsset: 'assets/images/fruit1.jpg',
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: screenHeight * 0.03),
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCategoryCard(
+    double screenHeight,
+    double screenWidth,
+    String img,
+  ) {
+    return Container(
+      height: screenHeight * 0.16,
+      width: screenWidth * 0.32,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: Colors.grey.shade200,
+      ),
+      child: Center(
+        child: Image.asset(
+          img,
+          height: screenHeight * 0.12,
+          width: screenWidth * 0.25,
         ),
       ),
     );

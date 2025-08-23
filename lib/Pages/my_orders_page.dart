@@ -16,13 +16,32 @@ class MyOrdersPage extends StatelessWidget {
             children: [
               // Header
               Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.arrow_back_ios),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            height: 45,
+                            width: 45,
+                            decoration: ShapeDecoration(
+                              shape: CircleBorder(),
+                              color: Colors.grey.shade200,
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                "assets/images/Icon1.png",
+                                color: Colors.black,
+                                height: 18,
+                              ),
+                            ),
+                          ),
+                        ),
                         SizedBox(width: 10),
                         Text(
                           "My Orders",

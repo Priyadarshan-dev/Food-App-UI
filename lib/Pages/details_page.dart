@@ -6,295 +6,348 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 50, left: 20),
-              child: Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      height: 45,
-                      width: 45,
-                      decoration: ShapeDecoration(
-                        shape: CircleBorder(),
-                        color: Colors.grey.shade200,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: screenHeight * 0.03,
+                  left: screenWidth * 0.05,
+                ),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        height: screenHeight * 0.055,
+                        width: screenWidth * 0.12,
+                        decoration: ShapeDecoration(
+                          shape: CircleBorder(),
+                          color: Colors.grey.shade200,
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            "assets/images/Icon1.png",
+                            height: screenHeight * 0.022,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: screenWidth * 0.04),
+                    Text(
+                      "Details",
+                      style: GoogleFonts.sen(
+                        fontWeight: FontWeight.w700,
+                        fontSize: screenHeight * 0.02,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.03),
+              Container(
+                height: screenHeight * 0.22,
+                width: screenWidth * 0.85,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: Color(0xFFFF7622),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/images/pizza.png",
+                      height: screenHeight * 0.18,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.03),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  children: [
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.5,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: Colors.white70,
+                        border: Border.all(color: Colors.black),
                       ),
                       child: Center(
-                        child: Image.asset(
-                          "assets/images/Icon1.png",
-                          height: 18,
+                        child: Text(
+                          "Uttora Cofffe House",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenHeight * 0.016,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(width: 20),
-                  Text(
-                    "Details",
-                    style: GoogleFonts.sen(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-            Container(
-              height: 184,
-              width: 360,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40),
-                color: Color(0xFFFF7622),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Image.asset("assets/images/pizza.png")],
-              ),
-            ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Container(
-                    height: 47,
-                    width: 201,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Colors.white70,
-                      border: Border(
-                        bottom: BorderSide(color: Colors.black),
-                        top: BorderSide(color: Colors.black),
-                        right: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black),
-                      ),
-                    ),
-                    child: Center(
+              SizedBox(height: screenHeight * 0.01),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  children: [
+                    Expanded(
                       child: Text(
-                        "Uttora Cofffe House",
+                        "Pizza Calzone European",
                         style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 13,
+                          fontWeight: FontWeight.w700,
+                          fontSize: screenHeight * 0.024,
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Text(
-                    "Pizza Calzone European",
-                    style: GoogleFonts.sen(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
+              SizedBox(height: screenHeight * 0.01),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Prosclutto e funghi is a pizza variety that is topped with tomato sauce",
+                        style: GoogleFonts.sen(
+                          fontWeight: FontWeight.w400,
+                          fontSize: screenHeight * 0.016,
+                        ),
+                        maxLines: 2,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Text(
-                    "Prosclutto e funghi is a pizza variety that is\ntopped with tomato sauce",
-                    style: GoogleFonts.sen(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13,
+              SizedBox(height: screenHeight * 0.02),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  spacing: screenWidth * 0.06,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/Star.png",
+                          color: Color(0xFFFF7622),
+                          height: screenHeight * 0.022,
+                        ),
+                        SizedBox(width: screenWidth * 0.01),
+                        Text(
+                          "4.7",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenHeight * 0.018,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/Car.png",
+                          color: Color(0xFFFF7622),
+                          height: screenHeight * 0.022,
+                        ),
+                        SizedBox(width: screenWidth * 0.01),
+                        Text(
+                          "Free",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenHeight * 0.018,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/Watch.png",
+                          color: Color(0xFFFF7622),
+                          height: screenHeight * 0.022,
+                        ),
+                        SizedBox(width: screenWidth * 0.01),
+                        Text(
+                          "20min",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenHeight * 0.018,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Row(
-                    children: [
-                      Image.asset(
-                        "assets/images/Star.png",
+              SizedBox(height: screenHeight * 0.02),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  spacing: screenWidth * 0.06,
+                  children: [
+                    Text(
+                      "SIZE:",
+                      style: GoogleFonts.sen(
+                        fontWeight: FontWeight.w400,
+                        fontSize: screenHeight * 0.018,
+                      ),
+                    ),
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.12,
+                      decoration: BoxDecoration(
                         color: Color(0xFFFF7622),
+                        shape: BoxShape.circle,
                       ),
-                      Text(
-                        "4.7",
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                      child: Center(
+                        child: Text(
+                          "10",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(width: 30),
-                  Row(
-                    children: [
-                      Image.asset(
-                        "assets/images/Car.png",
+                    ),
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.12,
+                      decoration: BoxDecoration(
                         color: Color(0xFFFF7622),
+                        shape: BoxShape.circle,
                       ),
-                      Text(
-                        "Free",
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                      child: Center(
+                        child: Text(
+                          "14",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(width: 30),
-                  Row(
-                    children: [
-                      Image.asset(
-                        "assets/images/Watch.png",
+                    ),
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.12,
+                      decoration: BoxDecoration(
                         color: Color(0xFFFF7622),
+                        shape: BoxShape.circle,
                       ),
-                      Text(
-                        "20min",
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                      child: Center(
+                        child: Text(
+                          "16",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
                         ),
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Text(
-                    "SIZE:",
-                    style: GoogleFonts.sen(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
+              SizedBox(height: screenHeight * 0.02),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  children: [
+                    Text(
+                      "INGRIDENTS",
+                      style: GoogleFonts.sen(
+                        fontWeight: FontWeight.w400,
+                        fontSize: screenHeight * 0.018,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 10),
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFF7622),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("10")),
-                  ),
-                  SizedBox(width: 10),
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFF7622),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("14")),
-                  ),
-                  SizedBox(width: 10),
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFF7622),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("16")),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Text(
-                    "INGRIDENTS",
-                    style: GoogleFonts.sen(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
+              SizedBox(height: screenHeight * 0.01),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
+                child: Row(
+                  spacing: screenWidth * 0.04,
+                  children: [
+                    Container(
+                      height: screenHeight * 0.06,
+                      width: screenWidth * 0.13,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFEBE4),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "10",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                    Container(
+                      height: screenHeight * 0.06,
+                      width: screenWidth * 0.13,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFEBE4),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "10",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: screenHeight * 0.06,
+                      width: screenWidth * 0.13,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFEBE4),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "10",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: screenHeight * 0.06,
+                      width: screenWidth * 0.13,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFEBE4),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "10",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: screenHeight * 0.06,
+                      width: screenWidth * 0.13,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFEBE4),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "10",
+                          style: TextStyle(fontSize: screenHeight * 0.018),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: Row(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFEBE4),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("10")),
-                  ),
-                  SizedBox(width: 20),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFEBE4),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("10")),
-                  ),
-                  SizedBox(width: 20),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFEBE4),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("10")),
-                  ),
-                  SizedBox(width: 20),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFEBE4),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("10")),
-                  ),
-                  SizedBox(width: 20),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFEBE4),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(child: Text("10")),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 10),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.15,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 25, right: 25),
+              SizedBox(height: screenHeight * 0.03),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
                 child: Column(
                   children: [
                     Row(
@@ -303,13 +356,13 @@ class DetailsPage extends StatelessWidget {
                         Text(
                           "\$32",
                           style: GoogleFonts.sen(
-                            fontSize: 30,
+                            fontSize: screenHeight * 0.03,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
                         Container(
-                          height: 50,
-                          width: 150,
+                          height: screenHeight * 0.06,
+                          width: screenWidth * 0.35,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
                             color: Colors.black,
@@ -318,8 +371,8 @@ class DetailsPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Container(
-                                height: 25,
-                                width: 25,
+                                height: screenHeight * 0.03,
+                                width: screenWidth * 0.07,
                                 decoration: ShapeDecoration(
                                   shape: CircleBorder(),
                                   color: Colors.grey.shade200,
@@ -327,15 +380,20 @@ class DetailsPage extends StatelessWidget {
                                 child: Center(
                                   child: Image.asset(
                                     "assets/images/Minus.png",
-                                    height: 18,
+                                    height: screenHeight * 0.018,
                                   ),
                                 ),
                               ),
-                              Text("2", style: TextStyle(color: Colors.white)),
-
+                              Text(
+                                "2",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: screenHeight * 0.02,
+                                ),
+                              ),
                               Container(
-                                height: 25,
-                                width: 25,
+                                height: screenHeight * 0.03,
+                                width: screenWidth * 0.07,
                                 decoration: ShapeDecoration(
                                   shape: CircleBorder(),
                                   color: Colors.grey.shade200,
@@ -343,7 +401,7 @@ class DetailsPage extends StatelessWidget {
                                 child: Center(
                                   child: Image.asset(
                                     "assets/images/Plus.png",
-                                    height: 18,
+                                    height: screenHeight * 0.018,
                                   ),
                                 ),
                               ),
@@ -352,12 +410,12 @@ class DetailsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: screenHeight * 0.02),
                     GestureDetector(
                       onTap: () {},
                       child: Container(
-                        height: 62,
-                        width: 327,
+                        height: screenHeight * 0.065,
+                        width: screenWidth * 0.85,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Color(0xFFFF7622),
@@ -367,7 +425,7 @@ class DetailsPage extends StatelessWidget {
                             "ADD TO CART",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                              fontSize: screenHeight * 0.018,
                               color: Colors.white,
                             ),
                           ),
@@ -377,12 +435,11 @@ class DetailsPage extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: screenHeight * 0.03),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-// SizedBox(height: 30),

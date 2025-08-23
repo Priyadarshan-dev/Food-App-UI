@@ -6,6 +6,9 @@ class OnGoingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -13,42 +16,54 @@ class OnGoingPage extends StatelessWidget {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 40),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Food",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.012),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: Divider(thickness: 0.5),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 15),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.015,
+                  ),
                   child: SizedBox(
-                    height: 140,
+                    height: screenHeight * 0.175,
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                "assets/images/pizza2.jpg",
+                                height: screenHeight * 0.075,
+                                width: screenWidth * 0.15,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.05,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -58,35 +73,35 @@ class OnGoingPage extends StatelessWidget {
                                         "Pizza Hut",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 140),
+                                      SizedBox(width: screenWidth * 0.35),
                                       Text(
                                         "#162432",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenHeight * 0.012),
                                   Row(
                                     children: [
                                       Text(
                                         "\$35.25",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 30),
+                                      SizedBox(width: screenWidth * 0.075),
                                       Text(
                                         "03 Items",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
                                     ],
@@ -96,15 +111,15 @@ class OnGoingPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: screenHeight * 0.037),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: 38,
-                                width: 139,
+                                height: screenHeight * 0.047,
+                                width: screenWidth * 0.35,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   color: Color(0xFFFF7622),
@@ -114,7 +129,7 @@ class OnGoingPage extends StatelessWidget {
                                     "Track Order",
                                     style: GoogleFonts.sen(
                                       fontWeight: FontWeight.w700,
-                                      fontSize: 13,
+                                      fontSize: screenWidth * 0.032,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -124,23 +139,16 @@ class OnGoingPage extends StatelessWidget {
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 20),
+                                padding: EdgeInsets.only(
+                                  right: screenWidth * 0.05,
+                                ),
                                 child: Container(
-                                  height: 38,
-                                  width: 139,
+                                  height: screenHeight * 0.047,
+                                  width: screenWidth * 0.35,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    border: Border(
-                                      top: BorderSide(color: Color(0xFFFF7622)),
-                                      bottom: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
-                                      right: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
-                                      left: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
+                                    border: Border.all(
+                                      color: Color(0xFFFF7622),
                                     ),
                                   ),
                                   child: Center(
@@ -148,7 +156,7 @@ class OnGoingPage extends StatelessWidget {
                                       "Cancel",
                                       style: GoogleFonts.sen(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 13,
+                                        fontSize: screenWidth * 0.032,
                                         color: Color(0xFFFF7622),
                                       ),
                                     ),
@@ -164,42 +172,54 @@ class OnGoingPage extends StatelessWidget {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 40),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Food",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.012),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: Divider(thickness: 0.5),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 15),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.018,
+                  ),
                   child: SizedBox(
-                    height: 140,
+                    height: screenHeight * 0.175,
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                "assets/images/mcd.jpg",
+                                height: screenHeight * 0.075,
+                                width: screenWidth * 0.15,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.05,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -209,35 +229,35 @@ class OnGoingPage extends StatelessWidget {
                                         "Pizza Hut",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 140),
+                                      SizedBox(width: screenWidth * 0.35),
                                       Text(
                                         "#162432",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenHeight * 0.012),
                                   Row(
                                     children: [
                                       Text(
                                         "\$35.25",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 30),
+                                      SizedBox(width: screenWidth * 0.075),
                                       Text(
                                         "03 Items",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
                                     ],
@@ -247,15 +267,15 @@ class OnGoingPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: screenHeight * 0.037),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: 38,
-                                width: 139,
+                                height: screenHeight * 0.047,
+                                width: screenWidth * 0.35,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   color: Color(0xFFFF7622),
@@ -265,7 +285,7 @@ class OnGoingPage extends StatelessWidget {
                                     "Track Order",
                                     style: GoogleFonts.sen(
                                       fontWeight: FontWeight.w700,
-                                      fontSize: 13,
+                                      fontSize: screenWidth * 0.032,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -275,23 +295,16 @@ class OnGoingPage extends StatelessWidget {
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 20),
+                                padding: EdgeInsets.only(
+                                  right: screenWidth * 0.05,
+                                ),
                                 child: Container(
-                                  height: 38,
-                                  width: 139,
+                                  height: screenHeight * 0.047,
+                                  width: screenWidth * 0.35,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    border: Border(
-                                      top: BorderSide(color: Color(0xFFFF7622)),
-                                      bottom: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
-                                      right: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
-                                      left: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
+                                    border: Border.all(
+                                      color: Color(0xFFFF7622),
                                     ),
                                   ),
                                   child: Center(
@@ -299,7 +312,7 @@ class OnGoingPage extends StatelessWidget {
                                       "Cancel",
                                       style: GoogleFonts.sen(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 13,
+                                        fontSize: screenWidth * 0.032,
                                         color: Color(0xFFFF7622),
                                       ),
                                     ),
@@ -315,42 +328,54 @@ class OnGoingPage extends StatelessWidget {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 40),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.03,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         "Food",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.012),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
                   child: Divider(thickness: 0.5),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 15),
+                  padding: EdgeInsets.only(
+                    left: screenWidth * 0.05,
+                    top: screenHeight * 0.018,
+                  ),
                   child: SizedBox(
-                    height: 200,
+                    height: screenHeight * 0.25,
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                "assets/images/starbucks.jpg",
+                                height: screenHeight * 0.075,
+                                width: screenWidth * 0.15,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 20),
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.05,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -360,35 +385,35 @@ class OnGoingPage extends StatelessWidget {
                                         "Pizza Hut",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 140),
+                                      SizedBox(width: screenWidth * 0.35),
                                       Text(
                                         "#162432",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenHeight * 0.012),
                                   Row(
                                     children: [
                                       Text(
                                         "\$35.25",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
-                                      SizedBox(width: 30),
+                                      SizedBox(width: screenWidth * 0.075),
                                       Text(
                                         "03 Items",
                                         style: GoogleFonts.sen(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16,
+                                          fontSize: screenWidth * 0.04,
                                         ),
                                       ),
                                     ],
@@ -398,15 +423,15 @@ class OnGoingPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: screenHeight * 0.037),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {},
                               child: Container(
-                                height: 38,
-                                width: 139,
+                                height: screenHeight * 0.047,
+                                width: screenWidth * 0.35,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   color: Color(0xFFFF7622),
@@ -416,7 +441,7 @@ class OnGoingPage extends StatelessWidget {
                                     "Track Order",
                                     style: GoogleFonts.sen(
                                       fontWeight: FontWeight.w700,
-                                      fontSize: 13,
+                                      fontSize: screenWidth * 0.032,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -426,23 +451,16 @@ class OnGoingPage extends StatelessWidget {
                             GestureDetector(
                               onTap: () {},
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 20),
+                                padding: EdgeInsets.only(
+                                  right: screenWidth * 0.05,
+                                ),
                                 child: Container(
-                                  height: 38,
-                                  width: 139,
+                                  height: screenHeight * 0.047,
+                                  width: screenWidth * 0.35,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    border: Border(
-                                      top: BorderSide(color: Color(0xFFFF7622)),
-                                      bottom: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
-                                      right: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
-                                      left: BorderSide(
-                                        color: Color(0xFFFF7622),
-                                      ),
+                                    border: Border.all(
+                                      color: Color(0xFFFF7622),
                                     ),
                                   ),
                                   child: Center(
@@ -450,7 +468,7 @@ class OnGoingPage extends StatelessWidget {
                                       "Cancel",
                                       style: GoogleFonts.sen(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 13,
+                                        fontSize: screenWidth * 0.032,
                                         color: Color(0xFFFF7622),
                                       ),
                                     ),

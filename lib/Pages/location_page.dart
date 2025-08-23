@@ -7,52 +7,66 @@ class LocationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Image in center
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   "assets/images/maps.png",
-                  height: 250,
-                  width: 206,
+                  height: screenHeight * 0.3,
+                  width: screenWidth * 0.55,
                 ),
               ],
             ),
-            SizedBox(height: 50),
+
+            SizedBox(height: screenHeight * 0.06),
+
+            // Button
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => const HomePage()),
                 );
               },
               child: Container(
-                height: 62,
-                width: 327,
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.85,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFFFF7622),
+                  color: const Color(0xFFFF7622),
                 ),
                 child: Center(
                   child: Text(
                     "ACCESS LOCATION",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w700,
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.045,
                       color: Colors.white,
                     ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 30),
+
+            SizedBox(height: screenHeight * 0.04),
+
+            // Disclaimer text (centered)
             Text(
-              "DFOOD WILL ACCESS YOUR LOCATION\n        ONLY WHILE USING THE APP",
-              style: GoogleFonts.sen(fontWeight: FontWeight.w400, fontSize: 16),
+              "DFOOD WILL ACCESS YOUR LOCATION\nONLY WHILE USING THE APP",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.sen(
+                fontWeight: FontWeight.w400,
+                fontSize: screenWidth * 0.04,
+              ),
             ),
           ],
         ),

@@ -11,7 +11,6 @@ class BurgerPage extends StatefulWidget {
   State<BurgerPage> createState() => _BurgerPageState();
 }
 
-// Container(height: MediaQuery.of(context).size.height * 0.15,child: ,),
 class _BurgerPageState extends State<BurgerPage> {
   List<String> burgerImages = [
     "assets/images/burger.png",
@@ -20,126 +19,122 @@ class _BurgerPageState extends State<BurgerPage> {
     "assets/images/burger.png",
   ];
   FilterCardComponent filterCardComponent = FilterCardComponent();
+
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         body: ListView(
           children: [
             Column(
               children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50, left: 20),
-                      child: Row(
-                        children: [
-                          Row(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Container(
-                                  height: 45,
-                                  width: 45,
-                                  decoration: ShapeDecoration(
-                                    shape: CircleBorder(),
-                                    color: Colors.grey.shade200,
-                                  ),
-                                  child: Center(
-                                    child: Image.asset(
-                                      "assets/images/Icon1.png",
-                                      height: 18,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(width: 20),
-                          Container(
-                            height: 46,
-                            width: 89,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white70,
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black),
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Burger",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 120),
-                          Container(
-                            height: 45,
-                            width: 45,
-                            decoration: ShapeDecoration(
-                              shape: CircleBorder(),
-                              color: Colors.black,
-                            ),
-                            child: Center(
-                              child: Image.asset(
-                                "assets/images/Search.png",
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-
-                          SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: () {
-                              filterCardComponent.filterYourSearch(context);
-                            },
-                            child: Container(
-                              height: 45,
-                              width: 45,
-                              decoration: ShapeDecoration(
-                                shape: CircleBorder(),
-                                color: Colors.grey.shade200,
-                              ),
-                              child: Center(
-                                child: Image.asset(
-                                  "assets/images/Filter.png",
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 30),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(
+                    top: screenHeight * 0.06,
+                    left: screenWidth * 0.05,
+                    right: screenWidth * 0.05,
+                  ),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          height: screenHeight * 0.055,
+                          width: screenWidth * 0.12,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.grey.shade200,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              "assets/images/Icon1.png",
+                              height: screenHeight * 0.022,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: screenWidth * 0.04),
+                      Container(
+                        height: screenHeight * 0.055,
+                        width: screenWidth * 0.22,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white70,
+                          border: Border.all(color: Colors.black),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Burger",
+                            style: GoogleFonts.sen(
+                              fontWeight: FontWeight.w400,
+                              fontSize: screenHeight * 0.018,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: screenHeight * 0.055,
+                        width: screenWidth * 0.12,
+                        decoration: ShapeDecoration(
+                          shape: CircleBorder(),
+                          color: Colors.black,
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            "assets/images/Search.png",
+                            color: Colors.white,
+                            height: screenHeight * 0.022,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: screenWidth * 0.025),
+                      GestureDetector(
+                        onTap: () {
+                          filterCardComponent.filterYourSearch(context);
+                        },
+                        child: Container(
+                          height: screenHeight * 0.055,
+                          width: screenWidth * 0.12,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.grey.shade200,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              "assets/images/Filter.png",
+                              color: Colors.black,
+                              height: screenHeight * 0.022,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.03),
+                Padding(
+                  padding: EdgeInsets.only(left: screenWidth * 0.06),
                   child: Row(
                     children: [
                       Text(
                         "Popular Burgers",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
+                          fontSize: screenHeight * 0.024,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.02),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -149,75 +144,79 @@ class _BurgerPageState extends State<BurgerPage> {
                     },
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 163 / 180,
+                        childAspectRatio: 0.7,
                         crossAxisCount: 2,
-                        mainAxisSpacing: 5,
-                        crossAxisSpacing: 5,
+                        mainAxisSpacing: screenHeight * 0.01,
+                        crossAxisSpacing: screenWidth * 0.02,
                       ),
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: 4,
                       itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white70,
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white70,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.04,
+                              vertical: screenHeight * 0.01,
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                left: 20,
-                                right: 20,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(burgerImages[index]),
-                                  Text(
-                                    "Burger Bistro",
-                                    style: GoogleFonts.sen(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 16,
-                                    ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  burgerImages[index],
+                                  height: screenHeight * 0.1,
+                                ),
+                                SizedBox(height: screenHeight * 0.01),
+                                Text(
+                                  "Burger Bistro",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: screenHeight * 0.018,
                                   ),
-                                  Text(
-                                    "Rose Garden",
-                                    style: GoogleFonts.sen(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13,
-                                    ),
+                                ),
+                                SizedBox(height: screenHeight * 0.005),
+                                Text(
+                                  "Rose Garden",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: screenHeight * 0.015,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "\$40",
-                                        style: GoogleFonts.sen(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w700,
+                                ),
+                                SizedBox(height: screenHeight * 0.01),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "\$40",
+                                      style: GoogleFonts.sen(
+                                        fontSize: screenHeight * 0.018,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Container(
+                                      height: screenHeight * 0.04,
+                                      width: screenWidth * 0.09,
+                                      decoration: ShapeDecoration(
+                                        shape: CircleBorder(),
+                                        color: Color(0xFFFF7622),
+                                      ),
+                                      child: Center(
+                                        child: Image.asset(
+                                          "assets/images/Plus.png",
+                                          color: Colors.white,
+                                          height: screenHeight * 0.018,
                                         ),
                                       ),
-                                      Container(
-                                        height: 35,
-                                        width: 35,
-                                        decoration: ShapeDecoration(
-                                          shape: CircleBorder(),
-                                          color: Color(0xFFFF7622),
-                                        ),
-                                        child: Center(
-                                          child: Image.asset(
-                                            "assets/images/Plus.png",
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         );
@@ -225,22 +224,22 @@ class _BurgerPageState extends State<BurgerPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.02),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(left: screenWidth * 0.06),
                   child: Row(
                     children: [
                       Text(
                         "Open Restaurants",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
+                          fontSize: screenHeight * 0.024,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.02),
                 RestaurantCard(
                   name: 'Rose Garden Restaurant',
                   rating: 4.7,
@@ -248,7 +247,7 @@ class _BurgerPageState extends State<BurgerPage> {
                   time: '20 min',
                   imageAsset: 'assets/images/pastries.jpg',
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.02),
                 RestaurantCard(
                   name: 'Rose Garden Restaurant',
                   rating: 4.7,
@@ -256,7 +255,7 @@ class _BurgerPageState extends State<BurgerPage> {
                   time: '20 min',
                   imageAsset: 'assets/images/fruit1.jpg',
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.03),
               ],
             ),
           ],

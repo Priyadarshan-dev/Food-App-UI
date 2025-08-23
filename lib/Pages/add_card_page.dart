@@ -16,12 +16,18 @@ class _AddCardPageState extends State<AddCardPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 25, top: 30),
+              padding: EdgeInsets.only(
+                left: screenWidth * 0.06,
+                top: screenHeight * 0.03,
+              ),
               child: Row(
                 children: [
                   GestureDetector(
@@ -29,73 +35,82 @@ class _AddCardPageState extends State<AddCardPage> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.12,
                       decoration: ShapeDecoration(
                         shape: CircleBorder(),
                         color: Colors.grey.shade200,
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(4),
+                          padding: EdgeInsets.all(screenWidth * 0.01),
                           child: Image.asset("assets/images/Cross.png"),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: screenWidth * 0.05),
                   Text(
                     "Add Card",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.04,
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 40, top: 20),
+              padding: EdgeInsets.only(
+                left: screenWidth * 0.07,
+                top: screenHeight * 0.010,
+              ),
               child: Row(
                 children: [
                   Text(
                     "CARD HOLDER NAME",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w400,
-                      fontSize: 14,
+                      fontSize: screenWidth * 0.035,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.012),
             TextFieldComponent(
               controller: _nameController,
               hintText: '',
               obscureText: false,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 40, top: 20),
+              padding: EdgeInsets.only(
+                left: screenWidth * 0.07,
+                top: screenHeight * 0.010,
+              ),
               child: Row(
                 children: [
                   Text(
                     "CARD NUMBER",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w400,
-                      fontSize: 14,
+                      fontSize: screenWidth * 0.035,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.012),
             TextFieldComponent(
               controller: _numberController,
               hintText: '',
               obscureText: false,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 40, top: 20),
+              padding: EdgeInsets.only(
+                left: screenWidth * 0.07,
+                top: screenHeight * 0.010,
+              ),
               child: Row(
                 children: [
                   Row(
@@ -105,15 +120,15 @@ class _AddCardPageState extends State<AddCardPage> {
                         "EXPIRE DATE",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 14,
+                          fontSize: screenWidth * 0.035,
                         ),
                       ),
-                      SizedBox(width: 100),
+                      SizedBox(width: screenWidth * 0.25),
                       Text(
                         "CV",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
-                          fontSize: 14,
+                          fontSize: screenWidth * 0.035,
                         ),
                       ),
                     ],
@@ -121,9 +136,12 @@ class _AddCardPageState extends State<AddCardPage> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.012),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30),
+              padding: EdgeInsets.only(
+                left: screenWidth * 0.075,
+                right: screenWidth * 0.075,
+              ),
               child: Row(
                 children: [
                   Expanded(
@@ -136,7 +154,7 @@ class _AddCardPageState extends State<AddCardPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  SizedBox(width: screenWidth * 0.05),
                   Expanded(
                     child: TextField(
                       // controller: _postCodeController,
@@ -161,8 +179,8 @@ class _AddCardPageState extends State<AddCardPage> {
                 );
               },
               child: Container(
-                height: 62,
-                width: 327,
+                height: screenHeight * 0.075,
+                width: screenWidth * 0.85,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Color(0xFFFF7622),
@@ -172,14 +190,14 @@ class _AddCardPageState extends State<AddCardPage> {
                     "ADD & MAKE PAYMENT",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w700,
-                      fontSize: 14,
+                      fontSize: screenWidth * 0.035,
                       color: Colors.white,
                     ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: screenHeight * 0.06),
           ],
         ),
       ),

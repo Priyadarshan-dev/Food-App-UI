@@ -6,34 +6,44 @@ class IntroPage3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return SafeArea(
+    // screen sizes
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-           SizedBox(height: 150),
+            SizedBox(height: screenHeight * 0.13),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   "assets/images/cooking.png",
-                  height: 292,
-                  width: 240,
+                  height: screenHeight * 0.35,
+                  width: screenWidth * 0.65,
+                  fit: BoxFit.contain,
                 ),
               ],
             ),
+
             Center(
               child: Text(
                 "Order from choosen chef",
-                style: GoogleFonts.sen(fontWeight: FontWeight.w800,fontSize: 25),
+                style: GoogleFonts.sen(
+                  fontWeight: FontWeight.w800,
+                  fontSize: screenWidth * 0.060, // was 25
+                ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 5),
             Center(
               child: Text(
                 "Get all your loved foods in one once place\n   you just place the order we do the rest",
-                style: GoogleFonts.sen(fontSize: 16),
+                textAlign: TextAlign.center,
+                style: GoogleFonts.sen(fontSize: screenWidth * 0.04),
               ),
             ),
           ],

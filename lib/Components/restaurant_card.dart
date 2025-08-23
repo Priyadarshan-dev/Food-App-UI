@@ -19,6 +19,9 @@ class RestaurantCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -26,99 +29,102 @@ class RestaurantCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           child: Image.asset(
             imageAsset,
-            height: 137,
-            width: 360,
+            height: screenHeight * 0.18, // instead of 137
+            width: screenWidth * 0.87, // ~327px on a 375px wide screen
             fit: BoxFit.cover,
           ),
         ),
-        const SizedBox(height: 5),
+        SizedBox(height: screenHeight * 0.008),
 
         // Restaurant Name
         Padding(
-          padding: const EdgeInsets.only(left: 30),
+          padding: EdgeInsets.only(left: screenWidth * 0.06),
           child: Row(
             children: [
               Text(
                 name,
-                style: GoogleFonts.sen(fontWeight: FontWeight.w400, fontSize: 20),
+                style: GoogleFonts.sen(
+                  fontWeight: FontWeight.w400,
+                  fontSize: screenWidth * 0.055, // instead of 20
+                ),
               ),
             ],
           ),
         ),
 
-        const SizedBox(height: 5),
+        SizedBox(height: screenHeight * 0.008),
 
-        // Same categories for all cards
-        const Padding(
-          padding: EdgeInsets.only(left: 30),
+        // Categories
+        Padding(
+          padding: EdgeInsets.only(left: screenWidth * 0.06),
           child: Row(
             children: [
               Text("Burger"),
-              SizedBox(width: 8),
+              SizedBox(width: screenWidth * 0.02),
               Text("Chicken"),
-              SizedBox(width: 8),
+              SizedBox(width: screenWidth * 0.02),
               Text("Rice"),
-              SizedBox(width: 8),
+              SizedBox(width: screenWidth * 0.02),
               Text("Wings"),
             ],
           ),
         ),
 
-        const SizedBox(height: 10),
+        SizedBox(height: screenHeight * 0.015),
 
         // Info Row
         Padding(
-          padding: const EdgeInsets.only(left: 30),
+          padding: EdgeInsets.only(left: screenWidth * 0.06),
           child: Row(
             children: [
               Row(
                 children: [
                   Image.asset(
                     "assets/images/Star.png",
-                    color: Color(0xFFFF7622),
+                    color: const Color(0xFFFF7622),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: screenWidth * 0.025),
                   Text(
-                    "4.7",
+                    rating.toString(),
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.045, // instead of 16
                     ),
                   ),
                 ],
               ),
-              SizedBox(width: 30),
+              SizedBox(width: screenWidth * 0.08),
               Row(
                 children: [
                   Image.asset(
                     "assets/images/Car.png",
-                    color: Color(0xFFFF7622),
+                    color: const Color(0xFFFF7622),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: screenWidth * 0.025),
                   Text(
-                    "Free",
+                    delivery,
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.045,
                     ),
-                  ), // fixed delivery
+                  ),
                 ],
               ),
-              SizedBox(width: 30),
+              SizedBox(width: screenWidth * 0.08),
               Row(
                 children: [
                   Image.asset(
                     "assets/images/Watch.png",
-                    color: Color(0xFFFF7622),
+                    color: const Color(0xFFFF7622),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: screenWidth * 0.025),
                   Text(
-                    "20 min",
+                    time,
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.045,
                     ),
-                  ), // fixed time
+                  ),
                 ],
               ),
             ],

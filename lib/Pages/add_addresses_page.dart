@@ -14,71 +14,106 @@ class _AddAddressPageState extends State<AddAddressPage> {
   final _streetController = TextEditingController();
   final _postCodeController = TextEditingController();
   final _apartmentController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.35,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF0F5FA),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/map.png"),
-                    fit: BoxFit.cover,
-                  ),
+                height: screenHeight * 0.35,
+                decoration: BoxDecoration(color: const Color(0xFFF0F5FA)),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: screenWidth * 0.05,
+                        top: screenHeight * 0.02,
+                      ),
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              height: screenHeight * 0.055,
+                              width: screenWidth * 0.12,
+                              decoration: ShapeDecoration(
+                                shape: CircleBorder(),
+                                color: Colors.black,
+                              ),
+                              child: Center(
+                                child: Image.asset(
+                                  "assets/images/Icon1.png",
+                                  color: Colors.white,
+                                  height: screenHeight * 0.022,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
 
               Padding(
-                padding: const EdgeInsets.only(left: 40),
+                padding: EdgeInsets.only(left: screenWidth * 0.07),
                 child: Row(
                   children: [
                     Text(
                       "ADDRESS",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.012),
               TextFieldComponent(
                 controller: _addressController,
                 hintText: '',
                 obscureText: false,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
               Padding(
-                padding: const EdgeInsets.only(left: 40),
+                padding: EdgeInsets.only(left: screenWidth * 0.05),
                 child: Row(
                   children: [
                     Text(
                       "STREET",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                       ),
                     ),
-                    SizedBox(width: 120),
+                    SizedBox(width: screenWidth * 0.35),
                     Text(
                       "POST CODE",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.012),
               Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30),
+                padding: EdgeInsets.only(
+                  left: screenWidth * 0.05,
+                  right: screenWidth * 0.05,
+                ),
                 child: Row(
                   children: [
                     Expanded(
@@ -86,18 +121,22 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         controller: _streetController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(
+                              screenWidth * 0.03,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: screenWidth * 0.025),
                     Expanded(
                       child: TextField(
                         controller: _postCodeController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(
+                              screenWidth * 0.03,
+                            ),
                           ),
                         ),
                       ),
@@ -105,112 +144,117 @@ class _AddAddressPageState extends State<AddAddressPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
               Padding(
-                padding: const EdgeInsets.only(left: 40),
+                padding: EdgeInsets.only(left: screenWidth * 0.07),
                 child: Row(
                   children: [
                     Text(
                       "APPARTMENT",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.012),
               TextFieldComponent(
                 controller: _apartmentController,
                 hintText: '',
                 obscureText: false,
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
               Padding(
-                padding: const EdgeInsets.only(left: 40),
+                padding: EdgeInsets.only(left: screenWidth * 0.05),
                 child: Row(
                   children: [
                     Text(
                       "LABEL AS",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 45,
-                    width: 94,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xFFF0F5FA),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "HOME",
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Colors.black,
+              SizedBox(height: screenHeight * 0.02),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth * 0.05),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.24,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(screenWidth * 0.1),
+                        color: const Color(0xFFF0F5FA),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "HOME",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenWidth * 0.035,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 45,
-                    width: 94,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xFFF0F5FA),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Work",
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Colors.black,
+                    SizedBox(width: screenWidth * 0.025),
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.24,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(screenWidth * 0.1),
+                        color: const Color(0xFFF0F5FA),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Work",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenWidth * 0.035,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 45,
-                    width: 94,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xFFF0F5FA),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Other",
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Colors.black,
+                    SizedBox(width: screenWidth * 0.025),
+                    Container(
+                      height: screenHeight * 0.055,
+                      width: screenWidth * 0.24,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(screenWidth * 0.1),
+                        color: const Color(0xFFF0F5FA),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Other",
+                          style: GoogleFonts.sen(
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenWidth * 0.035,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
               GestureDetector(
                 onTap: () {},
                 child: Container(
-                  height: 62,
-                  width: 327,
+                  height: screenHeight * 0.07,
+                  width: screenWidth * 0.85,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.03),
                     color: Color(0xFFFF7622),
                   ),
                   child: Center(
@@ -218,7 +262,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                       "SAVE LOCATION",
                       style: GoogleFonts.sen(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                         color: Colors.white,
                       ),
                     ),
