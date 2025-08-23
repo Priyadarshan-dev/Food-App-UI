@@ -37,10 +37,20 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                         },
-                        child: Image.asset("assets/images/Icon.png")
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.grey.shade200,
+                          ),
+                          child: Center(
+                            child: Image.asset("assets/images/Icon.png"),
+                          ),
+                        ),
                       ),
                     ),
-                    SizedBox(width: 30),
+                    SizedBox(width: 15),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Column(
@@ -51,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w700,
                               fontSize: 12,
+                              color: Color(0xFFFF7622),
                             ),
                           ),
                           Text(
@@ -63,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    SizedBox(width: 180),
+                    SizedBox(width: 150),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: GestureDetector(
@@ -73,7 +84,20 @@ class _HomePageState extends State<HomePage> {
                             MaterialPageRoute(builder: (context) => CartPage()),
                           );
                         },
-                        child: Icon(Icons.shopping_bag),
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.black,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              "assets/images/cart.png",
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -83,22 +107,37 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 30),
+                      padding: const EdgeInsets.only(left: 30, right: 5),
                       child: Text(
-                        "Hey Halal, Good Afternoon!",
+                        "Hey Halal,",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
                         ),
                       ),
                     ),
+                    Text(
+                      "Good Afternoon!",
+                      style: GoogleFonts.sen(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height: 20),
-                TextFieldComponent(
-                  controller: _searchController,
-                  hintText: 'Search dishes, restaurants',
-                  obscureText: false,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },
+                  child: TextFieldComponent(
+                    controller: _searchController,
+                    hintText: 'Search dishes, restaurants',
+                    obscureText: false,
+                  ),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -148,21 +187,24 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 30),
                         child: Container(
-                          height: 60,
-                          width: 100,
+                          height: 122,
+                          width: 122,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            color: Color(0xFFFF7622),
+                            color: Colors.grey.shade200,
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          child: Column(
                             children: [
-                              Text(
-                                "All",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16,
-                                ),
+                              SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/images/pizza1.png",
+                                    height: 81,
+                                    width: 96,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -172,21 +214,24 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: Container(
-                          height: 60,
-                          width: 150,
+                          height: 122,
+                          width: 122,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                             color: Color(0xFFFF7622),
+                            color: Colors.grey.shade200,
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          child: Column(
                             children: [
-                              Text(
-                                "Hot Dog",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16,
-                                ),
+                              SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/images/burger.png",
+                                    height: 81,
+                                    width: 96,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -196,21 +241,24 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: Container(
-                          height: 60,
-                          width: 170,
+                          height: 122,
+                          width: 122,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            color: Color(0xFFFF7622),
+                            color: Colors.grey.shade200,
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          child: Column(
                             children: [
-                              Text(
-                                "Burger",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16,
-                                ),
+                              SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/images/pizza1.png",
+                                    height: 81,
+                                    width: 96,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -265,6 +313,7 @@ class _HomePageState extends State<HomePage> {
                     rating: 4.7,
                     delivery: 'Free',
                     time: '20 min',
+                    imageAsset: 'assets/images/healthy.jpg',
                   ),
                 ),
                 SizedBox(height: 20),
@@ -273,6 +322,7 @@ class _HomePageState extends State<HomePage> {
                   rating: 4.7,
                   delivery: 'Free',
                   time: '20 min',
+                  imageAsset: 'assets/images/fruit2.jpg',
                 ),
                 SizedBox(height: 20),
                 RestaurantCard(
@@ -280,7 +330,9 @@ class _HomePageState extends State<HomePage> {
                   rating: 4.7,
                   delivery: 'Free',
                   time: '20 min',
+                  imageAsset: 'assets/images/fruit1.jpg',
                 ),
+                SizedBox(height: 50),
               ],
             ),
           ],

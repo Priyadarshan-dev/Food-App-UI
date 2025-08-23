@@ -11,21 +11,34 @@ class DetailsPage extends StatelessWidget {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 50, left: 25),
+              padding: const EdgeInsets.only(top: 50, left: 20),
               child: Row(
                 children: [
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Image.asset("assets/images/Icon1.png"),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.grey.shade200,
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          "assets/images/Icon1.png",
+                          height: 18,
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(width: 20),
                   Text(
                     "Details",
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w700,
-                      fontSize: 13,
+                      fontSize: 16,
                     ),
                   ),
                 ],
@@ -34,15 +47,19 @@ class DetailsPage extends StatelessWidget {
             SizedBox(height: 30),
             Container(
               height: 184,
-              width: 327,
+              width: 360,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
                 color: Color(0xFFFF7622),
               ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Image.asset("assets/images/pizza.png")],
+              ),
             ),
             SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Container(
@@ -50,7 +67,13 @@ class DetailsPage extends StatelessWidget {
                     width: 201,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: Color(0xFFFF7622),
+                      color: Colors.white70,
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black),
+                        top: BorderSide(color: Colors.black),
+                        right: BorderSide(color: Colors.black),
+                        left: BorderSide(color: Colors.black),
+                      ),
                     ),
                     child: Center(
                       child: Text(
@@ -67,7 +90,7 @@ class DetailsPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Text(
@@ -82,7 +105,7 @@ class DetailsPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Text(
@@ -97,7 +120,7 @@ class DetailsPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Row(
@@ -152,7 +175,7 @@ class DetailsPage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Text(
@@ -197,7 +220,7 @@ class DetailsPage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Text(
@@ -212,7 +235,7 @@ class DetailsPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 35),
               child: Row(
                 children: [
                   Container(
@@ -267,7 +290,7 @@ class DetailsPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 7),
+            SizedBox(height: 10),
             Container(
               height: MediaQuery.of(context).size.height * 0.15,
               child: Padding(
@@ -280,7 +303,7 @@ class DetailsPage extends StatelessWidget {
                         Text(
                           "\$32",
                           style: GoogleFonts.sen(
-                            fontSize: 20,
+                            fontSize: 30,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -294,14 +317,35 @@ class DetailsPage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Image.asset(
-                                "assets/images/Minus.png",
-                                color: Colors.white,
+                              Container(
+                                height: 25,
+                                width: 25,
+                                decoration: ShapeDecoration(
+                                  shape: CircleBorder(),
+                                  color: Colors.grey.shade200,
+                                ),
+                                child: Center(
+                                  child: Image.asset(
+                                    "assets/images/Minus.png",
+                                    height: 18,
+                                  ),
+                                ),
                               ),
                               Text("2", style: TextStyle(color: Colors.white)),
-                              Image.asset(
-                                "assets/images/Plus.png",
-                                color: Colors.white,
+
+                              Container(
+                                height: 25,
+                                width: 25,
+                                decoration: ShapeDecoration(
+                                  shape: CircleBorder(),
+                                  color: Colors.grey.shade200,
+                                ),
+                                child: Center(
+                                  child: Image.asset(
+                                    "assets/images/Plus.png",
+                                    height: 18,
+                                  ),
+                                ),
                               ),
                             ],
                           ),

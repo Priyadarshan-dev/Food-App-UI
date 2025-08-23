@@ -21,10 +21,28 @@ class _AddCardPageState extends State<AddCardPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 40, top: 30),
+              padding: const EdgeInsets.only(left: 25, top: 30),
               child: Row(
                 children: [
-                  Image.asset("assets/images/Cross.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.grey.shade200,
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: Image.asset("assets/images/Cross.png"),
+                        ),
+                      ),
+                    ),
+                  ),
                   SizedBox(width: 20),
                   Text(
                     "Add Card",
@@ -155,7 +173,7 @@ class _AddCardPageState extends State<AddCardPage> {
                     style: GoogleFonts.sen(
                       fontWeight: FontWeight.w700,
                       fontSize: 14,
-                      color: Colors.white
+                      color: Colors.white,
                     ),
                   ),
                 ),

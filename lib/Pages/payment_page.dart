@@ -25,7 +25,21 @@ class _PaymentPageState extends State<PaymentPage> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Image.asset("assets/images/Icon1.png"),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.grey.shade200,
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          "assets/images/Icon1.png",
+                          color: Colors.black,
+                          height: 18,
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(width: 10),
                   Text(
@@ -45,20 +59,18 @@ class _PaymentPageState extends State<PaymentPage> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 25),
-                      child: Container(
-                        height: 72,
-                        width: 85,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.grey.shade200,
-                        ),
-                        child: Center(
-                          child: Image.asset("assets/images/Cash.png"),
-                        ),
+                    Container(
+                      height: 72,
+                      width: 85,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.grey.shade200,
+                      ),
+                      child: Center(
+                        child: Image.asset("assets/images/Cash.png"),
                       ),
                     ),
+
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Container(
@@ -116,7 +128,7 @@ class _PaymentPageState extends State<PaymentPage> {
             isMasterSelected
                 ? Container(
                     height: 82,
-                    width: 327,
+                    width: 370,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.grey.shade200,
@@ -158,7 +170,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   )
                 : Container(
                     height: 257,
-                    width: 327,
+                    width: 370,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: Colors.grey.shade200,

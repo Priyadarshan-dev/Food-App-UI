@@ -13,27 +13,22 @@ class RestaruantViewPage extends StatefulWidget {
 
 class _RestaruantViewPageState extends State<RestaruantViewPage> {
   FilterCardComponent filterCardComponent = FilterCardComponent();
+  List<String> burgerImages = [
+    "assets/images/burger.png",
+    "assets/images/burger2.png",
+    "assets/images/burger2.png",
+    "assets/images/burger.png",
+  ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: ListView(
-          children: [
-            Column(
+    return Scaffold(
+      body: ListView(
+        children: [
+          SafeArea(
+            child: Column(
               children: [
                 Stack(
                   children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height / 2.7,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(30),
-                          bottomRight: Radius.circular(30),
-                        ),
-                        color: Colors.blueGrey,
-                      ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 20,
@@ -59,6 +54,18 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                      child: Image.asset(
+                        "assets/images/healthy.jpg",
+                        height: MediaQuery.of(context).size.height / 2.7,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ],
@@ -171,7 +178,13 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                               width: 90,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Color(0xFFFF7622),
+                                color: Colors.white70,
+                                border: Border(
+                                  bottom: BorderSide(color: Colors.black),
+                                  top: BorderSide(color: Colors.black),
+                                  right: BorderSide(color: Colors.black),
+                                  left: BorderSide(color: Colors.black),
+                                ),
                               ),
                               child: Center(
                                 child: Text(
@@ -189,10 +202,16 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                           padding: const EdgeInsets.only(left: 15),
                           child: Container(
                             height: 40,
-                            width: 90,
+                            width: 95,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color: Color(0xFFFF7622),
+                              color: Colors.white70,
+                              border: Border(
+                                bottom: BorderSide(color: Colors.black),
+                                top: BorderSide(color: Colors.black),
+                                right: BorderSide(color: Colors.black),
+                                left: BorderSide(color: Colors.black),
+                              ),
                             ),
                             child: Center(
                               child: Text(
@@ -212,7 +231,13 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                             width: 90,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color: Color(0xFFFF7622),
+                              color: Colors.white70,
+                              border: Border(
+                                bottom: BorderSide(color: Colors.black),
+                                top: BorderSide(color: Colors.black),
+                                right: BorderSide(color: Colors.black),
+                                left: BorderSide(color: Colors.black),
+                              ),
                             ),
                             child: Center(
                               child: Text(
@@ -229,10 +254,16 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                           padding: const EdgeInsets.only(left: 15),
                           child: Container(
                             height: 40,
-                            width: 90,
+                            width: 95,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color: Color(0xFFFF7622),
+                              color: Colors.white70,
+                              border: Border(
+                                bottom: BorderSide(color: Colors.black),
+                                top: BorderSide(color: Colors.black),
+                                right: BorderSide(color: Colors.black),
+                                left: BorderSide(color: Colors.black),
+                              ),
                             ),
                             child: Center(
                               child: Text(
@@ -275,7 +306,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                     },
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 153 / 180,
+                        childAspectRatio: 163 / 180,
                         crossAxisCount: 2,
                         mainAxisSpacing: 5,
                         crossAxisSpacing: 5,
@@ -288,8 +319,8 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color(0xFFFF7622),
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white70,
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -300,6 +331,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Image.asset(burgerImages[index]),
                                   Text(
                                     "Burger Bistro",
                                     style: GoogleFonts.sen(
@@ -325,7 +357,20 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
-                                      Image.asset("assets/images/Plus.png"),
+                                      Container(
+                                        height: 35,
+                                        width: 35,
+                                        decoration: ShapeDecoration(
+                                          shape: CircleBorder(),
+                                          color: Color(0xFFFF7622),
+                                        ),
+                                        child: Center(
+                                          child: Image.asset(
+                                            "assets/images/Plus.png",
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ],
@@ -339,8 +384,8 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

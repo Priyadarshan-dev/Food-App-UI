@@ -30,12 +30,22 @@ class _CartPageState extends State<CartPage> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Image.asset(
-                          "assets/images/Icon1.png",
-                          color: Colors.white,
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.grey.shade200,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              "assets/images/Icon1.png",
+                              height: 18,
+                            ),
+                          ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 20),
                       Text(
                         "Cart",
                         style: GoogleFonts.sen(
@@ -77,6 +87,7 @@ class _CartPageState extends State<CartPage> {
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
                     ),
+                    child: Image.asset("assets/images/pizza1.png"),
                   ),
                   SizedBox(width: 10),
                   Expanded(
@@ -134,26 +145,57 @@ class _CartPageState extends State<CartPage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10, left: 40),
-                        child: Image.asset(
-                          "assets/images/Cross.png",
-                          color: Colors.red,
+                        child: Container(
+                          height: 25,
+                          width: 25,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.red,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Image.asset(
+                              "assets/images/Cross.png",
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(height: 60),
                       Row(
                         children: [
-                          Image.asset(
-                            "assets/images/Minus.png",
-                            color: Colors.white,
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: ShapeDecoration(
+                              shape: CircleBorder(),
+                              color: Colors.grey.shade200,
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                "assets/images/Minus.png",
+                                height: 15,
+                              ),
+                            ),
                           ),
                           SizedBox(width: 12),
                           Text("2", style: TextStyle(color: Colors.white)),
                           SizedBox(width: 12),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Image.asset(
-                              "assets/images/Plus.png",
-                              color: Colors.white,
+                            child: Container(
+                              height: 25,
+                              width: 25,
+                              decoration: ShapeDecoration(
+                                shape: CircleBorder(),
+                                color: Colors.grey.shade200,
+                              ),
+                              child: Center(
+                                child: Image.asset(
+                                  "assets/images/Plus.png",
+                                  height: 15,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -176,6 +218,7 @@ class _CartPageState extends State<CartPage> {
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
                     ),
+                    child: Image.asset("assets/images/pizza.png"),
                   ),
                   SizedBox(width: 10),
                   Expanded(
@@ -233,26 +276,57 @@ class _CartPageState extends State<CartPage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10, left: 40),
-                        child: Image.asset(
-                          "assets/images/Cross.png",
-                          color: Colors.red,
+                        child: Container(
+                          height: 25,
+                          width: 25,
+                          decoration: ShapeDecoration(
+                            shape: CircleBorder(),
+                            color: Colors.red,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Image.asset(
+                              "assets/images/Cross.png",
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(height: 60),
                       Row(
                         children: [
-                          Image.asset(
-                            "assets/images/Minus.png",
-                            color: Colors.white,
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: ShapeDecoration(
+                              shape: CircleBorder(),
+                              color: Colors.grey.shade200,
+                            ),
+                            child: Center(
+                              child: Image.asset(
+                                "assets/images/Minus.png",
+                                height: 15,
+                              ),
+                            ),
                           ),
                           SizedBox(width: 12),
                           Text("2", style: TextStyle(color: Colors.white)),
                           SizedBox(width: 12),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Image.asset(
-                              "assets/images/Plus.png",
-                              color: Colors.white,
+                            child: Container(
+                              height: 25,
+                              width: 25,
+                              decoration: ShapeDecoration(
+                                shape: CircleBorder(),
+                                color: Colors.grey.shade200,
+                              ),
+                              child: Center(
+                                child: Image.asset(
+                                  "assets/images/Plus.png",
+                                  height: 15,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -262,9 +336,9 @@ class _CartPageState extends State<CartPage> {
                 ],
               ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 190),
             Container(
-              height: MediaQuery.of(context).size.height * 0.46,
+              height: MediaQuery.of(context).size.height * 0.36,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -305,13 +379,13 @@ class _CartPageState extends State<CartPage> {
                   SizedBox(height: 20),
                   TextFieldComponent(
                     controller: _addressController,
-                    hintText: 'Address',
+                    hintText: '',
                     obscureText: false,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 40,
-                      top: 20,
+                      top: 40,
                       right: 20,
                     ),
                     child: Row(
@@ -352,7 +426,7 @@ class _CartPageState extends State<CartPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 40),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(

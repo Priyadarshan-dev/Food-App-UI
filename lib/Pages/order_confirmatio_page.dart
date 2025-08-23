@@ -12,6 +12,8 @@ class OrderConfirmatioPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset("assets/images/surprise.png", height: 207, width: 228),
+            SizedBox(height: 10),
             Center(
               child: Text(
                 "Congratulations!",
@@ -21,7 +23,7 @@ class OrderConfirmatioPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Center(
               child: Text(
                 "You succesfully maked a payment",
