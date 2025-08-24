@@ -13,6 +13,7 @@ class ProfilePage extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: Column(
           children: [
@@ -36,7 +37,7 @@ class ProfilePage extends StatelessWidget {
                           width: screenWidth * 0.12,
                           decoration: ShapeDecoration(
                             shape: CircleBorder(),
-                            color: Colors.grey.shade200,
+                            color: Color(0xFFF6F6F6),
                           ),
                           child: Center(
                             child: Image.asset(
@@ -68,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                           width: screenWidth * 0.12,
                           decoration: ShapeDecoration(
                             shape: CircleBorder(),
-                            color: Colors.grey.shade200,
+                            color: Color(0xFFF6F6F6),
                           ),
                           child: Center(
                             child: Image.asset(
@@ -86,7 +87,7 @@ class ProfilePage extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.02),
             Padding(
-              padding: EdgeInsets.only(left: screenWidth * 0.05),
+              padding: EdgeInsets.only(left: screenWidth * 0.08),
               child: Row(
                 children: [
                   ClipRRect(
@@ -131,7 +132,7 @@ class ProfilePage extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(screenWidth * 0.025),
-                  color: Color(0xFFF6F8FA),
+                  color: Color(0xFFF6F6F6),
                 ),
                 child: Column(
                   children: [
@@ -176,7 +177,7 @@ class ProfilePage extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(screenWidth * 0.025),
-                  color: Color(0xFFF6F8FA),
+                  color: Color(0xFFF6F6F6),
                 ),
                 child: Column(
                   children: [
@@ -228,7 +229,7 @@ class ProfilePage extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(screenWidth * 0.025),
-                  color: Color(0xFFF6F8FA),
+                  color: Color(0xFFF6F6F6),
                 ),
                 child: Column(
                   children: [
@@ -266,7 +267,7 @@ class ProfilePage extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(screenWidth * 0.025),
-                  color: Color(0xFFF6F8FA),
+                  color: Color(0xFFF6F6F6),
                 ),
                 child: Column(
                   children: [

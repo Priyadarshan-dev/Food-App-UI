@@ -11,6 +11,7 @@ class OrderConfirmatioPage extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

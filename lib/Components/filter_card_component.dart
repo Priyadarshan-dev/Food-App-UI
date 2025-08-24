@@ -13,6 +13,7 @@ class FilterCardComponent {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
+          backgroundColor: Color(0xFFFFFFFF),
           content: Container(
             width: screenWidth * 0.9,
             child: Column(
@@ -53,7 +54,7 @@ class FilterCardComponent {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white70,
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Color(0xFFEDEDED)),
                       ),
                       child: Center(
                         child: Text(
@@ -72,7 +73,7 @@ class FilterCardComponent {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white70,
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Color(0xFFEDEDED)),
                       ),
                       child: Center(
                         child: Text(
@@ -91,7 +92,7 @@ class FilterCardComponent {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white70,
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Color(0xFFEDEDED)),
                       ),
                       child: Center(
                         child: Text(
@@ -112,7 +113,7 @@ class FilterCardComponent {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white70,
-                    border: Border.all(color: Colors.black),
+                    border: Border.all(color: Color(0xFFEDEDED)),
                   ),
                   child: Center(
                     child: Text(
@@ -141,7 +142,7 @@ class FilterCardComponent {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white70,
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Color(0xFFEDEDED)),
                       ),
                       child: Center(
                         child: Text(
@@ -160,7 +161,7 @@ class FilterCardComponent {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white70,
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Color(0xFFEDEDED)),
                       ),
                       child: Center(
                         child: Text(
@@ -179,7 +180,7 @@ class FilterCardComponent {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white70,
-                        border: Border.all(color: Colors.black),
+                        border: Border.all(color: Color(0xFFEDEDED)),
                       ),
                       child: Center(
                         child: Text(
@@ -209,7 +210,7 @@ class FilterCardComponent {
                       width: screenHeight * 0.05,
                       decoration: ShapeDecoration(
                         shape: CircleBorder(),
-                        color: Colors.orange,
+                        color: Colors.white70,
                       ),
                       child: Center(
                         child: Text(
@@ -224,7 +225,7 @@ class FilterCardComponent {
                       width: screenHeight * 0.05,
                       decoration: ShapeDecoration(
                         shape: CircleBorder(),
-                        color: Colors.orange,
+                        color: Colors.white70,
                       ),
                       child: Center(
                         child: Text(
@@ -239,7 +240,7 @@ class FilterCardComponent {
                       width: screenHeight * 0.05,
                       decoration: ShapeDecoration(
                         shape: CircleBorder(),
-                        color: Colors.orange,
+                        color: Colors.white70,
                       ),
                       child: Center(
                         child: Text(
@@ -277,7 +278,10 @@ class FilterCardComponent {
                     Container(
                       height: screenHeight * 0.05,
                       width: screenHeight * 0.05,
-                      decoration: ShapeDecoration(shape: CircleBorder()),
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.white70,
+                      ),
                       child: Center(
                         child: Image.asset(
                           "assets/images/Star.png",
@@ -290,7 +294,10 @@ class FilterCardComponent {
                     Container(
                       height: screenHeight * 0.05,
                       width: screenHeight * 0.05,
-                      decoration: ShapeDecoration(shape: CircleBorder()),
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.white70,
+                      ),
                       child: Center(
                         child: Image.asset(
                           "assets/images/Star.png",
@@ -303,7 +310,10 @@ class FilterCardComponent {
                     Container(
                       height: screenHeight * 0.05,
                       width: screenHeight * 0.05,
-                      decoration: ShapeDecoration(shape: CircleBorder()),
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.white70,
+                      ),
                       child: Center(
                         child: Image.asset(
                           "assets/images/Star.png",
@@ -316,7 +326,10 @@ class FilterCardComponent {
                     Container(
                       height: screenHeight * 0.05,
                       width: screenHeight * 0.05,
-                      decoration: ShapeDecoration(shape: CircleBorder()),
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.white70,
+                      ),
                       child: Center(
                         child: Image.asset(
                           "assets/images/Star.png",

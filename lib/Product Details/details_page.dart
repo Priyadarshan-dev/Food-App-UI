@@ -11,6 +11,7 @@ class DetailsPage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFFFFFF),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -30,7 +31,7 @@ class DetailsPage extends StatelessWidget {
                         width: screenWidth * 0.12,
                         decoration: ShapeDecoration(
                           shape: CircleBorder(),
-                          color: Colors.grey.shade200,
+                          color: Color(0xFFF6F6F6),
                         ),
                         child: Center(
                           child: Image.asset(
@@ -210,12 +211,12 @@ class DetailsPage extends StatelessWidget {
                       height: screenHeight * 0.055,
                       width: screenWidth * 0.12,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFF7622),
+                        color: Color(0xFFF6F6F6),
                         shape: BoxShape.circle,
                       ),
                       child: Center(
                         child: Text(
-                          "10",
+                          "10''",
                           style: TextStyle(fontSize: screenHeight * 0.018),
                         ),
                       ),
@@ -224,12 +225,12 @@ class DetailsPage extends StatelessWidget {
                       height: screenHeight * 0.055,
                       width: screenWidth * 0.12,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFF7622),
+                        color: Color(0xFFF6F6F6),
                         shape: BoxShape.circle,
                       ),
                       child: Center(
                         child: Text(
-                          "14",
+                          "14''",
                           style: TextStyle(fontSize: screenHeight * 0.018),
                         ),
                       ),
@@ -238,12 +239,12 @@ class DetailsPage extends StatelessWidget {
                       height: screenHeight * 0.055,
                       width: screenWidth * 0.12,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFF7622),
+                        color: Color(0xFFF6F6F6),
                         shape: BoxShape.circle,
                       ),
                       child: Center(
                         child: Text(
-                          "16",
+                          "16''",
                           style: TextStyle(fontSize: screenHeight * 0.018),
                         ),
                       ),
@@ -279,12 +280,7 @@ class DetailsPage extends StatelessWidget {
                         color: const Color(0xFFFFEBE4),
                         shape: BoxShape.circle,
                       ),
-                      child: Center(
-                        child: Text(
-                          "10",
-                          style: TextStyle(fontSize: screenHeight * 0.018),
-                        ),
-                      ),
+                      child: Center(child: Image.asset("assets/images/1.png")),
                     ),
                     Container(
                       height: screenHeight * 0.06,
@@ -293,12 +289,7 @@ class DetailsPage extends StatelessWidget {
                         color: const Color(0xFFFFEBE4),
                         shape: BoxShape.circle,
                       ),
-                      child: Center(
-                        child: Text(
-                          "10",
-                          style: TextStyle(fontSize: screenHeight * 0.018),
-                        ),
-                      ),
+                      child: Center(child: Image.asset("assets/images/2.png")),
                     ),
                     Container(
                       height: screenHeight * 0.06,
@@ -307,12 +298,7 @@ class DetailsPage extends StatelessWidget {
                         color: const Color(0xFFFFEBE4),
                         shape: BoxShape.circle,
                       ),
-                      child: Center(
-                        child: Text(
-                          "10",
-                          style: TextStyle(fontSize: screenHeight * 0.018),
-                        ),
-                      ),
+                      child: Center(child: Image.asset("assets/images/3.png")),
                     ),
                     Container(
                       height: screenHeight * 0.06,
@@ -321,12 +307,7 @@ class DetailsPage extends StatelessWidget {
                         color: const Color(0xFFFFEBE4),
                         shape: BoxShape.circle,
                       ),
-                      child: Center(
-                        child: Text(
-                          "10",
-                          style: TextStyle(fontSize: screenHeight * 0.018),
-                        ),
-                      ),
+                      child: Center(child: Image.asset("assets/images/4.png")),
                     ),
                     Container(
                       height: screenHeight * 0.06,
@@ -335,19 +316,25 @@ class DetailsPage extends StatelessWidget {
                         color: const Color(0xFFFFEBE4),
                         shape: BoxShape.circle,
                       ),
-                      child: Center(
-                        child: Text(
-                          "10",
-                          style: TextStyle(fontSize: screenHeight * 0.018),
-                        ),
-                      ),
+                      child: Center(child: Image.asset("assets/images/5.png")),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: screenHeight * 0.03),
+              SizedBox(height: screenHeight * 0.01),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24),
+                  ),
+                  color: Color(0xFFF6F6F6),
+                ),
+                padding: EdgeInsets.only(
+                  left: screenWidth * 0.06,
+                  right: screenWidth * 0.06,
+                  top: screenHeight * 0.02,
+                ),
                 child: Column(
                   children: [
                     Row(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Categories/milkshakes_page.dart';
+import 'package:food_app/Categories/pizza_page.dart';
 import 'package:food_app/Components/text_field_component.dart';
-import 'package:food_app/Pages/burger_page.dart';
+import 'package:food_app/Categories/burger_page.dart';
 import 'package:food_app/Pages/cart_page.dart';
-import 'package:food_app/Pages/details_page.dart';
+import 'package:food_app/Product%20Details/details_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SearchPage extends StatefulWidget {
@@ -22,6 +24,7 @@ class _SearchPageState extends State<SearchPage> {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFFFFFF),
         body: ListView(
           children: [
             Column(
@@ -90,13 +93,11 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.03),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-                  child: TextFieldComponent(
-                    controller: _searchController,
-                    hintText: '',
-                    obscureText: false,
-                  ),
+                TextFieldComponent(
+                  controller: _searchController,
+                  hintText: 'Search',
+                  obscureText: false,
+                  prefixImage: "assets/images/Search.png",
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 Padding(
@@ -135,7 +136,7 @@ class _SearchPageState extends State<SearchPage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.white70,
-                              border: Border.all(color: Colors.black),
+                              border: Border.all(color: Color(0xFFEDEDED)),
                             ),
                             child: Center(
                               child: Text(
@@ -151,20 +152,30 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: screenWidth * 0.035),
-                        child: Container(
-                          height: screenHeight * 0.055,
-                          width: screenWidth * 0.25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white70,
-                            border: Border.all(color: Colors.black),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Sandwich",
-                              style: GoogleFonts.sen(
-                                fontWeight: FontWeight.w400,
-                                fontSize: screenHeight * 0.018,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MilkshakesPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: screenHeight * 0.055,
+                            width: screenWidth * 0.25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white70,
+                              border: Border.all(color: Color(0xFFEDEDED)),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Milkshakes",
+                                style: GoogleFonts.sen(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: screenHeight * 0.018,
+                                ),
                               ),
                             ),
                           ),
@@ -172,20 +183,30 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: screenWidth * 0.035),
-                        child: Container(
-                          height: screenHeight * 0.055,
-                          width: screenWidth * 0.18,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white70,
-                            border: Border.all(color: Colors.black),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Pizza",
-                              style: GoogleFonts.sen(
-                                fontWeight: FontWeight.w400,
-                                fontSize: screenHeight * 0.018,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PizzaPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: screenHeight * 0.055,
+                            width: screenWidth * 0.18,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white70,
+                              border: Border.all(color: Color(0xFFEDEDED)),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Pizza",
+                                style: GoogleFonts.sen(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: screenHeight * 0.018,
+                                ),
                               ),
                             ),
                           ),
@@ -193,20 +214,30 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: screenWidth * 0.035),
-                        child: Container(
-                          height: screenHeight * 0.055,
-                          width: screenWidth * 0.25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.white70,
-                            border: Border.all(color: Colors.black),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Sandwich",
-                              style: GoogleFonts.sen(
-                                fontWeight: FontWeight.w400,
-                                fontSize: screenHeight * 0.018,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MilkshakesPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: screenHeight * 0.055,
+                            width: screenWidth * 0.25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.white70,
+                              border: Border.all(color: Color(0xFFEDEDED)),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Milkshakes",
+                                style: GoogleFonts.sen(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: screenHeight * 0.018,
+                                ),
                               ),
                             ),
                           ),
@@ -303,7 +334,7 @@ class _SearchPageState extends State<SearchPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Pansi Restaurant",
+                            "American Spicy Burger Shop",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
                               fontSize: screenHeight * 0.018,
@@ -319,7 +350,7 @@ class _SearchPageState extends State<SearchPage> {
                               ),
                               SizedBox(width: screenWidth * 0.01),
                               Text(
-                                "4.7",
+                                "4.3",
                                 style: GoogleFonts.sen(
                                   fontWeight: FontWeight.w400,
                                   fontSize: screenHeight * 0.018,
@@ -357,7 +388,7 @@ class _SearchPageState extends State<SearchPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Pansi Restaurant",
+                            "Cafenio Coffee Club",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
                               fontSize: screenHeight * 0.018,
@@ -373,7 +404,7 @@ class _SearchPageState extends State<SearchPage> {
                               ),
                               SizedBox(width: screenWidth * 0.01),
                               Text(
-                                "4.7",
+                                "4.0",
                                 style: GoogleFonts.sen(
                                   fontWeight: FontWeight.w400,
                                   fontSize: screenHeight * 0.018,
@@ -421,11 +452,19 @@ class _SearchPageState extends State<SearchPage> {
                         );
                       },
                       child: Container(
-                        height: screenHeight * 0.15,
+                        height: screenHeight * 0.18,
                         width: screenWidth * 0.4,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.grey.shade200,
+                          color: Color(0xFFFFFFFF),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 2,
+                              blurRadius: 10,
+                              offset: const Offset(1, 3),
+                            ),
+                          ],
                         ),
                         child: Column(
                           children: [
@@ -440,17 +479,46 @@ class _SearchPageState extends State<SearchPage> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: screenHeight * 0.01),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.04,
+                              ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "European Pizza",
+                                    style: GoogleFonts.sen(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: screenWidth * 0.038,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              "Uttora Coffe House",
+                              style: GoogleFonts.sen(),
+                            ),
                           ],
                         ),
                       ),
                     ),
                     SizedBox(width: screenWidth * 0.05),
                     Container(
-                      height: screenHeight * 0.15,
+                      height: screenHeight * 0.18,
                       width: screenWidth * 0.4,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: Colors.grey.shade200,
+                        color: Color(0xFFFFFFFF),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 2,
+                            blurRadius: 10,
+                            offset: const Offset(1, 3),
+                          ),
+                        ],
                       ),
                       child: Column(
                         children: [
@@ -459,12 +527,28 @@ class _SearchPageState extends State<SearchPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(
-                                "assets/images/pizza1.png",
+                                "assets/images/pizza4.png",
                                 height: screenHeight * 0.1,
                                 width: screenWidth * 0.25,
                               ),
                             ],
                           ),
+                          SizedBox(height: screenHeight * 0.01),
+                          Padding(
+                            padding: EdgeInsets.only(left: screenWidth * 0.04),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Buffalo Pizza",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: screenWidth * 0.038,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Text("Cafenio Coffe Club", style: GoogleFonts.sen()),
                         ],
                       ),
                     ),

@@ -1,23 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/Components/filter_card_component.dart';
 import 'package:food_app/Components/restaurant_card.dart';
-import 'package:food_app/Pages/details_page.dart';
+import 'package:food_app/Product%20Details/details_page.dart';
+import 'package:food_app/Pages/restaruant_view_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BurgerPage extends StatefulWidget {
-  const BurgerPage({super.key});
+class PizzaPage extends StatefulWidget {
+  const PizzaPage({super.key});
 
   @override
-  State<BurgerPage> createState() => _BurgerPageState();
+  State<PizzaPage> createState() => _PizzaPageState();
 }
 
-class _BurgerPageState extends State<BurgerPage> {
+class _PizzaPageState extends State<PizzaPage> {
   List<String> burgerImages = [
-    "assets/images/burger.png",
-    "assets/images/burger2.png",
-    "assets/images/burger2.png",
-    "assets/images/burger.png",
+    "assets/images/pizza.png",
+    "assets/images/pizza1.png",
+    "assets/images/pizza4.png",
+    "assets/images/pizza.png",
   ];
+
+  List<String> title = [
+    "European Pizza",
+    "Buffalo Pizza",
+    "Italian Pizza",
+    "Wood Fire Pizza",
+  ];
+
+  List<String> subTitle = [
+    "Rose Garden",
+    "Cafenio Restaurant",
+    "Kaj Firm Kitchen",
+    "Kabab Restaurant",
+  ];
+
+  List<String> price = ["\$40", "\$60", "\$75", "\$94"];
+
   FilterCardComponent filterCardComponent = FilterCardComponent();
 
   @override
@@ -27,6 +45,7 @@ class _BurgerPageState extends State<BurgerPage> {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFFFFFF),
         body: ListView(
           children: [
             Column(
@@ -65,11 +84,11 @@ class _BurgerPageState extends State<BurgerPage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           color: Colors.white70,
-                          border: Border.all(color: Colors.black),
+                          border: Border.all(color: Color(0xFFEDEDED)),
                         ),
                         child: Center(
                           child: Text(
-                            "Burger",
+                            "Pizza",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w400,
                               fontSize: screenHeight * 0.018,
@@ -123,7 +142,7 @@ class _BurgerPageState extends State<BurgerPage> {
                   child: Row(
                     children: [
                       Text(
-                        "Popular Burgers",
+                        "Popular Pizza",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
                           fontSize: screenHeight * 0.024,
@@ -144,7 +163,7 @@ class _BurgerPageState extends State<BurgerPage> {
                     },
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 0.7,
+                        childAspectRatio: 0.85,
                         crossAxisCount: 2,
                         mainAxisSpacing: screenHeight * 0.01,
                         crossAxisSpacing: screenWidth * 0.02,
@@ -155,8 +174,16 @@ class _BurgerPageState extends State<BurgerPage> {
                       itemBuilder: (context, index) {
                         return Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white70,
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xFFFFFFFF),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.2),
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                offset: const Offset(1, 3),
+                              ),
+                            ],
                           ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
@@ -167,13 +194,15 @@ class _BurgerPageState extends State<BurgerPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Image.asset(
-                                  burgerImages[index],
-                                  height: screenHeight * 0.1,
+                                Center(
+                                  child: Image.asset(
+                                    burgerImages[index],
+                                    height: screenHeight * 0.1,
+                                  ),
                                 ),
                                 SizedBox(height: screenHeight * 0.01),
                                 Text(
-                                  "Burger Bistro",
+                                  title[index],
                                   style: GoogleFonts.sen(
                                     fontWeight: FontWeight.w700,
                                     fontSize: screenHeight * 0.018,
@@ -181,7 +210,7 @@ class _BurgerPageState extends State<BurgerPage> {
                                 ),
                                 SizedBox(height: screenHeight * 0.005),
                                 Text(
-                                  "Rose Garden",
+                                  subTitle[index],
                                   style: GoogleFonts.sen(
                                     fontWeight: FontWeight.w400,
                                     fontSize: screenHeight * 0.015,
@@ -193,7 +222,7 @@ class _BurgerPageState extends State<BurgerPage> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      "\$40",
+                                      price[index],
                                       style: GoogleFonts.sen(
                                         fontSize: screenHeight * 0.018,
                                         fontWeight: FontWeight.w700,
@@ -240,20 +269,40 @@ class _BurgerPageState extends State<BurgerPage> {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.02),
-                RestaurantCard(
-                  name: 'Rose Garden Restaurant',
-                  rating: 4.7,
-                  delivery: 'Free',
-                  time: '20 min',
-                  imageAsset: 'assets/images/pastries.jpg',
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaruantViewPage(),
+                      ),
+                    );
+                  },
+                  child: RestaurantCard(
+                    name: 'Tasty Treat Gallery',
+                    rating: 4.7,
+                    delivery: 'Free',
+                    time: '20 min',
+                    imageAsset: 'assets/images/top3.jpg',
+                  ),
                 ),
                 SizedBox(height: screenHeight * 0.02),
-                RestaurantCard(
-                  name: 'Rose Garden Restaurant',
-                  rating: 4.7,
-                  delivery: 'Free',
-                  time: '20 min',
-                  imageAsset: 'assets/images/fruit1.jpg',
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaruantViewPage(),
+                      ),
+                    );
+                  },
+                  child: RestaurantCard(
+                    name: 'American Spicy Burger Shop',
+                    rating: 4.7,
+                    delivery: 'Free',
+                    time: '20 min',
+                    imageAsset: 'assets/images/top4.jpg',
+                  ),
                 ),
                 SizedBox(height: screenHeight * 0.03),
               ],

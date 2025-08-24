@@ -21,13 +21,14 @@ class _AddAddressPageState extends State<AddAddressPage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 height: screenHeight * 0.35,
-                decoration: BoxDecoration(color: const Color(0xFFF0F5FA)),
+                decoration: BoxDecoration(color: Color(0xFFF6F6F6)),
                 child: Column(
                   children: [
                     Padding(
@@ -60,6 +61,15 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         ],
                       ),
                     ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(screenWidth * 0.025),
+                      child: Image.asset(
+                        "assets/images/location.png",
+                        height: screenHeight * 0.65,
+                        width: double.infinity,
+                        fit: BoxFit.contain, // keeps full image, no cutting
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -87,7 +97,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
               ),
               SizedBox(height: screenHeight * 0.02),
               Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.05),
+                padding: EdgeInsets.only(left: screenWidth * 0.08),
                 child: Row(
                   children: [
                     Text(
@@ -97,7 +107,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         fontSize: screenWidth * 0.035,
                       ),
                     ),
-                    SizedBox(width: screenWidth * 0.35),
+                    SizedBox(width: screenWidth * 0.37),
                     Text(
                       "POST CODE",
                       style: GoogleFonts.sen(
@@ -111,34 +121,24 @@ class _AddAddressPageState extends State<AddAddressPage> {
               SizedBox(height: screenHeight * 0.012),
               Padding(
                 padding: EdgeInsets.only(
-                  left: screenWidth * 0.05,
-                  right: screenWidth * 0.05,
+                  left: screenWidth * 0.025,
+                  right: screenWidth * 0.025,
                 ),
                 child: Row(
                   children: [
                     Expanded(
-                      child: TextField(
+                      child: TextFieldComponent(
                         controller: _streetController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(
-                              screenWidth * 0.03,
-                            ),
-                          ),
-                        ),
+                        hintText: '',
+                        obscureText: false,
                       ),
                     ),
-                    SizedBox(width: screenWidth * 0.025),
+                    SizedBox(width: screenWidth * 0.05),
                     Expanded(
-                      child: TextField(
+                      child: TextFieldComponent(
                         controller: _postCodeController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(
-                              screenWidth * 0.03,
-                            ),
-                          ),
-                        ),
+                        hintText: '',
+                        obscureText: false,
                       ),
                     ),
                   ],
@@ -168,7 +168,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
 
               SizedBox(height: screenHeight * 0.02),
               Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.05),
+                padding: EdgeInsets.only(left: screenWidth * 0.09),
                 child: Row(
                   children: [
                     Text(
@@ -183,7 +183,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
               ),
               SizedBox(height: screenHeight * 0.02),
               Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.05),
+                padding: EdgeInsets.only(left: screenWidth * 0.09),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -192,7 +192,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                       width: screenWidth * 0.24,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(screenWidth * 0.1),
-                        color: const Color(0xFFF0F5FA),
+                        color: Color(0xFFF6F6F6),
                       ),
                       child: Center(
                         child: Text(
@@ -211,7 +211,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                       width: screenWidth * 0.24,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(screenWidth * 0.1),
-                        color: const Color(0xFFF0F5FA),
+                        color: Color(0xFFF6F6F6),
                       ),
                       child: Center(
                         child: Text(
@@ -230,7 +230,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                       width: screenWidth * 0.24,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(screenWidth * 0.1),
-                        color: const Color(0xFFF0F5FA),
+                        color: Color(0xFFF6F6F6),
                       ),
                       child: Center(
                         child: Text(

@@ -11,6 +11,7 @@ class MyAddressPage extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: Column(
           children: [
@@ -30,7 +31,7 @@ class MyAddressPage extends StatelessWidget {
                       width: screenWidth * 0.12,
                       decoration: ShapeDecoration(
                         shape: CircleBorder(),
-                        color: Colors.grey.shade200,
+                        color: Color(0xFFF6F6F6),
                       ),
                       child: Center(
                         child: Image.asset(
@@ -122,7 +123,7 @@ Widget _buildAddressCard(
     height: screenHeight * 0.12,
     width: screenWidth * 0.9,
     decoration: BoxDecoration(
-      color: Colors.grey.shade100,
+      color: Color(0xFFF6F6F6),
       borderRadius: BorderRadius.circular(screenWidth * 0.035),
     ),
     child: Row(

@@ -22,11 +22,12 @@ class _LoginScreenState extends State<LoginScreen> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFF121223),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: screenHeight * 0.33,
+              height: screenHeight * 0.30,
               width: screenWidth,
               decoration: const BoxDecoration(color: Color(0xFF121223)),
               child: Column(
@@ -53,13 +54,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Container(
-              height: screenHeight * 0.75,
+              height: screenHeight * 0.70,
               width: screenWidth,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+                  topLeft: Radius.circular(24),
+                  topRight: Radius.circular(24),
                 ),
+                color: Color(0xFFFFFFFF),
               ),
               child: SingleChildScrollView(
                 // in case of small screens
@@ -108,24 +110,28 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: screenHeight * 0.01),
                     TextFieldComponent(
-                      suffixIcon: Icons.visibility_sharp,
                       controller: _passwordController,
                       hintText: '. . . . . . . . . . . ',
                       obscureText: true,
+                      suffixImage: "assets/images/eye.png",
                     ),
                     SizedBox(height: screenHeight * 0.02),
                     Row(
                       children: [
                         Padding(
                           padding: EdgeInsets.only(left: screenWidth * 0.06),
-                          child: const Icon(Icons.check_box),
+                          child: Image.asset(
+                            "assets/images/square-small.png",
+                            height: screenWidth * 0.10,
+                            color: Colors.grey.shade300,
+                          ),
                         ),
-                        SizedBox(width: screenWidth * 0.03), // was 10
+                        SizedBox(width: screenWidth * 0.02),
                         Text(
                           "Remember me",
                           style: GoogleFonts.sen(
                             fontWeight: FontWeight.w400,
-                            fontSize: screenWidth * 0.035, // was 13
+                            fontSize: screenWidth * 0.035,
                           ),
                         ),
                         Spacer(),
@@ -174,7 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             "LOG IN",
                             style: GoogleFonts.sen(
                               fontWeight: FontWeight.w700,
-                              fontSize: screenWidth * 0.04, // was 14
+                              fontSize: screenWidth * 0.04,
+                              color: Colors.white, // was 14
                             ),
                           ),
                         ),
@@ -224,30 +231,36 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          height: screenHeight * 0.07, // was 62
-                          width: screenHeight * 0.07, // keep it square
-                          decoration: const ShapeDecoration(
-                            shape: CircleBorder(),
-                            color: Colors.deepPurple,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            screenWidth * 0.025,
+                          ),
+                          child: Image.asset(
+                            "assets/images/facebook.png",
+                            height: screenHeight * 0.076,
+                            width: screenWidth * 0.168,
+                            fit: BoxFit.cover,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.08), // was 30
-                        Container(
-                          height: screenHeight * 0.07,
-                          width: screenHeight * 0.07,
-                          decoration: const ShapeDecoration(
-                            shape: CircleBorder(),
-                            color: Colors.deepPurple,
+                        ClipRRect(
+                          child: Image.asset(
+                            "assets/images/twitter.png",
+                            height: screenHeight * 0.076,
+                            width: screenWidth * 0.168,
+                            fit: BoxFit.cover,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.08),
-                        Container(
-                          height: screenHeight * 0.07,
-                          width: screenHeight * 0.07,
-                          decoration: const ShapeDecoration(
-                            shape: CircleBorder(),
-                            color: Colors.deepPurple,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            screenWidth * 0.025,
+                          ),
+                          child: Image.asset(
+                            "assets/images/apple.png",
+                            height: screenHeight * 0.076,
+                            width: screenWidth * 0.165,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ],

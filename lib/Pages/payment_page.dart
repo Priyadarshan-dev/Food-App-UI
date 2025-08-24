@@ -17,6 +17,7 @@ class _PaymentPageState extends State<PaymentPage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: Column(
           children: [
@@ -36,7 +37,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       width: screenWidth * 0.12,
                       decoration: ShapeDecoration(
                         shape: CircleBorder(),
-                        color: Colors.grey.shade200,
+                        color: Color(0xFFF6F6F6),
                       ),
                       child: Center(
                         child: Image.asset(
@@ -70,7 +71,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       width: screenWidth * 0.22,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Colors.grey.shade200,
+                        color: Color(0xFFF6F6F6),
                       ),
                       child: Center(
                         child: Image.asset("assets/images/Cash.png"),
@@ -84,7 +85,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         width: screenWidth * 0.22,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.grey.shade200,
+                          color: Color(0xFFF6F6F6),
                         ),
                         child: Center(
                           child: Image.asset("assets/images/visa.png"),
@@ -104,7 +105,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           width: screenWidth * 0.22,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Colors.grey.shade200,
+                            color: Color(0xFFF6F6F6),
                           ),
                           child: Center(
                             child: Image.asset("assets/images/mastercard.png"),
@@ -122,7 +123,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         width: screenWidth * 0.22,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.grey.shade200,
+                          color: Color(0xFFF6F6F6),
                         ),
                         child: Center(
                           child: Image.asset("assets/images/paypal.png"),
@@ -140,7 +141,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     width: screenWidth * 0.85,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey.shade200,
+                      color: Color(0xFFF6F6F6),
                     ),
                     child: Column(
                       children: [
@@ -188,7 +189,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     width: screenWidth * 0.85,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey.shade200,
+                      color: Color(0xFFF6F6F6),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -226,7 +227,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 width: screenWidth * 0.85, // was 327
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey.shade200,
+                  border: Border.all(color: Color(0xFFF6F6F6)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

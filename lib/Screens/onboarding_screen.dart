@@ -35,6 +35,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             controller: _controller,
             children: const [IntroPage1(), IntroPage3(), IntroPage4()],
           ),
+          //    SizedBox(height: screenHeight * 0.05),
           Container(
             alignment: const Alignment(0, 0.6),
             child: Column(
@@ -74,7 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               style: GoogleFonts.sen(
                                 color: Colors.white,
                                 fontSize: screenWidth * 0.045,
-                                fontWeight: FontWeight.w700
+                                fontWeight: FontWeight.w700,
                               ),
                             ),
                           ),
@@ -110,11 +111,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                           SizedBox(height: screenHeight * 0.03),
                           Center(
-                            child: Text(
-                              "Skip",
-                              style: GoogleFonts.sen(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
+                            child: GestureDetector(
+                              onTap: () {
+                                _controller.jumpToPage(2);
+                              },
+                              child: Text(
+                                "Skip",
+                                style: GoogleFonts.sen(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
                           ),

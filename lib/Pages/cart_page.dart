@@ -16,7 +16,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    
+
     return Scaffold(
       backgroundColor: Color(0xFF121223),
       body: SafeArea(
@@ -27,7 +27,10 @@ class _CartPageState extends State<CartPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: screenWidth * 0.08, top: screenHeight * 0.03),
+                    padding: EdgeInsets.only(
+                      left: screenWidth * 0.08,
+                      top: screenHeight * 0.03,
+                    ),
                     child: Row(
                       children: [
                         GestureDetector(
@@ -36,7 +39,7 @@ class _CartPageState extends State<CartPage> {
                           },
                           child: Container(
                             height: screenHeight * 0.055,
-                            width: screenHeight * 0.055,
+                            width: screenHeight * 0.050,
                             decoration: ShapeDecoration(
                               shape: CircleBorder(),
                               color: Colors.grey.shade200,
@@ -64,7 +67,10 @@ class _CartPageState extends State<CartPage> {
                   Row(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(right: screenWidth * 0.05, top: screenHeight * 0.03),
+                        padding: EdgeInsets.only(
+                          right: screenWidth * 0.05,
+                          top: screenHeight * 0.03,
+                        ),
                         child: Text(
                           "Done",
                           style: GoogleFonts.sen(
@@ -99,7 +105,10 @@ class _CartPageState extends State<CartPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: screenHeight * 0.01, left: screenWidth * 0.02),
+                            padding: EdgeInsets.only(
+                              top: screenHeight * 0.01,
+                              left: screenWidth * 0.02,
+                            ),
                             child: Text(
                               "Pizza Calzone",
                               style: GoogleFonts.sen(
@@ -121,7 +130,10 @@ class _CartPageState extends State<CartPage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: screenHeight * 0.006, left: screenWidth * 0.02),
+                            padding: EdgeInsets.only(
+                              top: screenHeight * 0.006,
+                              left: screenWidth * 0.02,
+                            ),
                             child: Text(
                               "\$64",
                               style: GoogleFonts.sen(
@@ -132,7 +144,10 @@ class _CartPageState extends State<CartPage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: screenHeight * 0.006, left: screenWidth * 0.02),
+                            padding: EdgeInsets.only(
+                              top: screenHeight * 0.006,
+                              left: screenWidth * 0.02,
+                            ),
                             child: Text(
                               '14',
                               style: GoogleFonts.sen(
@@ -148,7 +163,10 @@ class _CartPageState extends State<CartPage> {
                     Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: screenHeight * 0.01, left: screenWidth * 0.1),
+                          padding: EdgeInsets.only(
+                            top: screenHeight * 0.01,
+                            left: screenWidth * 0.1,
+                          ),
                           child: Container(
                             height: screenHeight * 0.03,
                             width: screenHeight * 0.03,
@@ -183,13 +201,18 @@ class _CartPageState extends State<CartPage> {
                               ),
                             ),
                             SizedBox(width: screenWidth * 0.03),
-                            Text("2", style: TextStyle(
-                              color: Colors.white,
-                              fontSize: screenWidth * 0.038,
-                            )),
+                            Text(
+                              "2",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: screenWidth * 0.038,
+                              ),
+                            ),
                             SizedBox(width: screenWidth * 0.03),
                             Padding(
-                              padding: EdgeInsets.only(right: screenWidth * 0.02),
+                              padding: EdgeInsets.only(
+                                right: screenWidth * 0.02,
+                              ),
                               child: Container(
                                 height: screenHeight * 0.03,
                                 width: screenHeight * 0.03,
@@ -233,7 +256,10 @@ class _CartPageState extends State<CartPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: screenHeight * 0.01, left: screenWidth * 0.02),
+                            padding: EdgeInsets.only(
+                              top: screenHeight * 0.01,
+                              left: screenWidth * 0.02,
+                            ),
                             child: Text(
                               "Pizza Calzone",
                               style: GoogleFonts.sen(
@@ -255,7 +281,10 @@ class _CartPageState extends State<CartPage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: screenHeight * 0.012, left: screenWidth * 0.02),
+                            padding: EdgeInsets.only(
+                              top: screenHeight * 0.012,
+                              left: screenWidth * 0.02,
+                            ),
                             child: Text(
                               "\$64",
                               style: GoogleFonts.sen(
@@ -266,7 +295,10 @@ class _CartPageState extends State<CartPage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: screenHeight * 0.012, left: screenWidth * 0.02),
+                            padding: EdgeInsets.only(
+                              top: screenHeight * 0.012,
+                              left: screenWidth * 0.02,
+                            ),
                             child: Text(
                               '14',
                               style: GoogleFonts.sen(
@@ -282,7 +314,10 @@ class _CartPageState extends State<CartPage> {
                     Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: screenHeight * 0.01, left: screenWidth * 0.1),
+                          padding: EdgeInsets.only(
+                            top: screenHeight * 0.01,
+                            left: screenWidth * 0.1,
+                          ),
                           child: Container(
                             height: screenHeight * 0.03,
                             width: screenHeight * 0.03,
@@ -317,13 +352,18 @@ class _CartPageState extends State<CartPage> {
                               ),
                             ),
                             SizedBox(width: screenWidth * 0.03),
-                            Text("2", style: TextStyle(
-                              color: Colors.white,
-                              fontSize: screenWidth * 0.038,
-                            )),
+                            Text(
+                              "2",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: screenWidth * 0.038,
+                              ),
+                            ),
                             SizedBox(width: screenWidth * 0.03),
                             Padding(
-                              padding: EdgeInsets.only(right: screenWidth * 0.02),
+                              padding: EdgeInsets.only(
+                                right: screenWidth * 0.02,
+                              ),
                               child: Container(
                                 height: screenHeight * 0.03,
                                 width: screenHeight * 0.03,
@@ -355,7 +395,7 @@ class _CartPageState extends State<CartPage> {
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
                   ),
-                  color: Colors.white,
+                  color: Color(0xFFFFFFFF),
                 ),
                 child: Column(
                   children: [
@@ -389,13 +429,13 @@ class _CartPageState extends State<CartPage> {
                     SizedBox(height: screenHeight * 0.02),
                     TextFieldComponent(
                       controller: _addressController,
-                      hintText: '',
+                      hintText: '2118 Thornridge Cir. Syracuse',
                       obscureText: false,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                         left: screenWidth * 0.1,
-                        top: screenHeight * 0.04,
+                        top: screenHeight * 0.02,
                         right: screenWidth * 0.05,
                       ),
                       child: Row(
@@ -415,7 +455,7 @@ class _CartPageState extends State<CartPage> {
                                 "\$96",
                                 style: GoogleFonts.sen(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: screenWidth * 0.045,
+                                  fontSize: screenWidth * 0.065,
                                 ),
                               ),
                             ],
@@ -430,7 +470,10 @@ class _CartPageState extends State<CartPage> {
                                   color: Color(0xFFFF7622),
                                 ),
                               ),
-                              Icon(Icons.arrow_forward_ios, size: screenWidth * 0.04),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                size: screenWidth * 0.04,
+                              ),
                             ],
                           ),
                         ],
@@ -441,12 +484,14 @@ class _CartPageState extends State<CartPage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => PaymentPage()),
+                          MaterialPageRoute(
+                            builder: (context) => PaymentPage(),
+                          ),
                         );
                       },
                       child: Container(
-                        height: screenHeight * 0.07,
-                        width: screenWidth * 0.8,
+                        height: screenHeight * 0.07, // was 62
+                        width: screenWidth * 0.85,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Color(0xFFFF7622),

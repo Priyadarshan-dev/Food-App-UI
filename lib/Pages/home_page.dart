@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Categories/burger_page.dart';
+import 'package:food_app/Categories/milkshakes_page.dart';
+import 'package:food_app/Categories/pizza_page.dart';
 import 'package:food_app/Components/restaurant_card.dart';
 import 'package:food_app/Components/text_field_component.dart';
 import 'package:food_app/Pages/cart_page.dart';
@@ -24,6 +27,7 @@ class _HomePageState extends State<HomePage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: ListView(
           children: [
@@ -145,6 +149,7 @@ class _HomePageState extends State<HomePage> {
                   controller: _searchController,
                   hintText: 'Search dishes, restaurants',
                   obscureText: false,
+                  prefixImage: "assets/images/Search.png",
                 ),
                 // Search
                 GestureDetector(
@@ -174,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: screenWidth * 0.05),
+                      padding: EdgeInsets.only(right: screenWidth * 0.08),
                       child: Row(
                         children: [
                           Text(
@@ -203,22 +208,55 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.06),
                     child: Row(
                       children: [
-                        _buildCategoryCard(
-                          screenHeight,
-                          screenWidth,
-                          "assets/images/pizza1.png",
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PizzaPage(),
+                              ),
+                            );
+                          },
+                          child: _buildCategoryCard(
+                            screenHeight,
+                            screenWidth,
+                            "assets/images/pizza1.png",
+                            "Pizza",
+                          ),
                         ),
                         SizedBox(width: screenWidth * 0.05),
-                        _buildCategoryCard(
-                          screenHeight,
-                          screenWidth,
-                          "assets/images/burger.png",
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BurgerPage(),
+                              ),
+                            );
+                          },
+                          child: _buildCategoryCard(
+                            screenHeight,
+                            screenWidth,
+                            "assets/images/burger.png",
+                            "Burger",
+                          ),
                         ),
                         SizedBox(width: screenWidth * 0.05),
-                        _buildCategoryCard(
-                          screenHeight,
-                          screenWidth,
-                          "assets/images/pizza1.png",
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MilkshakesPage(),
+                              ),
+                            );
+                          },
+                          child: _buildCategoryCard(
+                            screenHeight,
+                            screenWidth,
+                            "assets/images/shakes.png",
+                            "MilkShakes",
+                          ),
                         ),
                         SizedBox(width: screenWidth * 0.08),
                       ],
@@ -281,20 +319,40 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.025),
-                RestaurantCard(
-                  name: 'Rose Garden Restaurant',
-                  rating: 4.7,
-                  delivery: 'Free',
-                  time: '20 min',
-                  imageAsset: "assets/images/nonveg.jpg",
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaruantViewPage(),
+                      ),
+                    );
+                  },
+                  child: RestaurantCard(
+                    name: 'Rose Garden Restaurant',
+                    rating: 4.7,
+                    delivery: 'Free',
+                    time: '20 min',
+                    imageAsset: "assets/images/pizza5.jpg",
+                  ),
                 ),
                 SizedBox(height: screenHeight * 0.025),
-                RestaurantCard(
-                  name: 'Rose Garden Restaurant',
-                  rating: 4.7,
-                  delivery: 'Free',
-                  time: '20 min',
-                  imageAsset: 'assets/images/fruit1.jpg',
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaruantViewPage(),
+                      ),
+                    );
+                  },
+                  child: RestaurantCard(
+                    name: 'Rose Garden Restaurant',
+                    rating: 4.7,
+                    delivery: 'Free',
+                    time: '20 min',
+                    imageAsset: 'assets/images/top5.jpg',
+                  ),
                 ),
                 SizedBox(height: screenHeight * 0.03),
               ],
@@ -304,26 +362,47 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
 
-  Widget _buildCategoryCard(
-    double screenHeight,
-    double screenWidth,
-    String img,
-  ) {
-    return Container(
-      height: screenHeight * 0.16,
-      width: screenWidth * 0.32,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: Colors.grey.shade200,
-      ),
-      child: Center(
-        child: Image.asset(
-          img,
-          height: screenHeight * 0.12,
-          width: screenWidth * 0.25,
+Widget _buildCategoryCard(
+  double screenHeight,
+  double screenWidth,
+  String img,
+  String title,
+) {
+  return Column(
+    children: [
+      Container(
+        height: screenHeight * 0.16,
+        width: screenWidth * 0.32,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Color(0xFFFFFFFF),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2), // soft grey shadow
+              spreadRadius: 2, // how wide the shadow spreads
+              blurRadius: 10, // softness of the shadow
+              offset: const Offset(1, 3), // x, y position
+            ),
+          ],
+        ),
+        child: Center(
+          child: Image.asset(
+            img,
+            height: screenHeight * 0.12,
+            width: screenWidth * 0.25,
+          ),
         ),
       ),
-    );
-  }
+      SizedBox(height: screenHeight * 0.01),
+      Text(
+        title,
+        style: GoogleFonts.sen(
+          fontWeight: FontWeight.w700,
+          fontSize: screenWidth * 0.05,
+        ),
+      ),
+    ],
+  );
 }

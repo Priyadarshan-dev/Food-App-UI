@@ -5,8 +5,8 @@ class TextFieldComponent extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
-  final IconData? suffixIcon;
-  final IconData? prefixIcon;
+  final String? suffixImage; // changed from IconData
+  final String? prefixImage; // changed from IconData
   final String? labelText;
 
   const TextFieldComponent({
@@ -14,8 +14,8 @@ class TextFieldComponent extends StatelessWidget {
     required this.controller,
     required this.hintText,
     required this.obscureText,
-    this.suffixIcon,
-    this.prefixIcon,
+    this.suffixImage,
+    this.prefixImage,
     this.labelText,
   });
 
@@ -42,39 +42,55 @@ class TextFieldComponent extends StatelessWidget {
               ),
             ),
           Container(
-            height: screenHeight * (62 / 812),
-            width: screenWidth,
+            height: screenHeight * 0.07, 
+            width: screenWidth * 0.85,
             child: TextField(
               obscureText: obscureText,
               controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey.shade300),
+                  borderSide: BorderSide(color: Color(0xFFF6F6F6)),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey.shade300),
+                  borderSide: BorderSide(color: Color(0xFFF6F6F6)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey.shade500),
+                  borderSide: BorderSide(color: Color(0xFFF6F6F6)),
                 ),
                 hintText: hintText,
                 hintStyle: GoogleFonts.sen(
                   fontSize: screenWidth * 0.035,
                   color: Colors.grey.shade600,
                 ),
-                prefixIcon: prefixIcon != null
-                    ? Icon(prefixIcon, color: Color(0xFFF0F5FA))
+
+                // ✅ Use asset images here
+                prefixIcon: prefixImage != null
+                    ? Padding(
+                        padding: const EdgeInsets.only(left: 0), // adjust size
+                        child: Image.asset(
+                          prefixImage!,
+                          color: Colors.grey.shade600,
+                        ),
+                      )
                     : null,
-                suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+                suffixIcon: suffixImage != null
+                    ? Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Image.asset(
+                          suffixImage!,
+                          color: Colors.grey.shade600,
+                        ),
+                      )
+                    : null,
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: 18,
                 ),
                 filled: true,
-                fillColor: Color(0xFFF0F5FA),
+                fillColor: Color(0xFFF6F6F6),
               ),
             ),
           ),

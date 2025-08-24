@@ -13,6 +13,8 @@ class AddCardPage extends StatefulWidget {
 class _AddCardPageState extends State<AddCardPage> {
   final _nameController = TextEditingController();
   final _numberController = TextEditingController();
+  final _expireDateController = TextEditingController();
+  final _cvcController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class _AddCardPageState extends State<AddCardPage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: Column(
           children: [
@@ -63,7 +66,7 @@ class _AddCardPageState extends State<AddCardPage> {
             Padding(
               padding: EdgeInsets.only(
                 left: screenWidth * 0.07,
-                top: screenHeight * 0.010,
+                top: screenHeight * 0.020,
               ),
               child: Row(
                 children: [
@@ -80,7 +83,7 @@ class _AddCardPageState extends State<AddCardPage> {
             SizedBox(height: screenHeight * 0.012),
             TextFieldComponent(
               controller: _nameController,
-              hintText: '',
+              hintText: 'Vishal Khadok',
               obscureText: false,
             ),
             Padding(
@@ -103,7 +106,7 @@ class _AddCardPageState extends State<AddCardPage> {
             SizedBox(height: screenHeight * 0.012),
             TextFieldComponent(
               controller: _numberController,
-              hintText: '',
+              hintText: '**************',
               obscureText: false,
             ),
             Padding(
@@ -123,9 +126,9 @@ class _AddCardPageState extends State<AddCardPage> {
                           fontSize: screenWidth * 0.035,
                         ),
                       ),
-                      SizedBox(width: screenWidth * 0.25),
+                      SizedBox(width: screenWidth * 0.28),
                       Text(
-                        "CV",
+                        "CVC",
                         style: GoogleFonts.sen(
                           fontWeight: FontWeight.w400,
                           fontSize: screenWidth * 0.035,
@@ -139,30 +142,24 @@ class _AddCardPageState extends State<AddCardPage> {
             SizedBox(height: screenHeight * 0.012),
             Padding(
               padding: EdgeInsets.only(
-                left: screenWidth * 0.075,
-                right: screenWidth * 0.075,
+                left: screenWidth * 0.025,
+                right: screenWidth * 0.025,
               ),
               child: Row(
                 children: [
                   Expanded(
-                    child: TextField(
-                      // controller: _streetController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
+                    child: TextFieldComponent(
+                      controller: _expireDateController,
+                      hintText: 'mm/yyyy',
+                      obscureText: false,
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.05),
                   Expanded(
-                    child: TextField(
-                      // controller: _postCodeController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
+                    child: TextFieldComponent(
+                      controller: _cvcController,
+                      hintText: '***',
+                      obscureText: false,
                     ),
                   ),
                 ],

@@ -20,7 +20,7 @@ class LocationPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  "assets/images/maps.png",
+                  "assets/images/location4.png",
                   height: screenHeight * 0.3,
                   width: screenWidth * 0.55,
                 ),

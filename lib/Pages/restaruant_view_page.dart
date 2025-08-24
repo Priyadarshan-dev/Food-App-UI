@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Categories/milkshakes_page.dart';
+import 'package:food_app/Categories/pizza_page.dart';
 import 'package:food_app/Components/filter_card_component.dart';
-import 'package:food_app/Pages/burger_page.dart';
-import 'package:food_app/Pages/details_page.dart';
+import 'package:food_app/Categories/burger_page.dart';
+import 'package:food_app/Product%20Details/details_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RestaruantViewPage extends StatefulWidget {
@@ -25,6 +27,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: ListView(
         children: [
           SafeArea(
@@ -67,7 +70,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                         bottomRight: Radius.circular(20),
                       ),
                       child: Image.asset(
-                        "assets/images/healthy.jpg",
+                        "assets/images/top6.jpg",
                         height: screenHeight * 0.37,
                         width: screenWidth,
                         fit: BoxFit.cover,
@@ -196,12 +199,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.white70,
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.black),
-                                  top: BorderSide(color: Colors.black),
-                                  right: BorderSide(color: Colors.black),
-                                  left: BorderSide(color: Colors.black),
-                                ),
+                                border: Border.all(color: Color(0xFFEDEDED)),
                               ),
                               child: Center(
                                 child: Text(
@@ -217,25 +215,30 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: screenWidth * 0.035),
-                          child: Container(
-                            height: screenHeight * 0.05,
-                            width: screenWidth * 0.24,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white70,
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MilkshakesPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: screenHeight * 0.05,
+                              width: screenWidth * 0.24,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white70,
+                                border: Border.all(color: Color(0xFFEDEDED)),
                               ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Sandwich",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: screenWidth * 0.035,
+                              child: Center(
+                                child: Text(
+                                  "Milkshakes",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: screenWidth * 0.035,
+                                  ),
                                 ),
                               ),
                             ),
@@ -243,25 +246,30 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: screenWidth * 0.035),
-                          child: Container(
-                            height: screenHeight * 0.05,
-                            width: screenWidth * 0.22,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white70,
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PizzaPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: screenHeight * 0.05,
+                              width: screenWidth * 0.22,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white70,
+                                border: Border.all(color: Color(0xFFEDEDED)),
                               ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Pizza",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: screenWidth * 0.035,
+                              child: Center(
+                                child: Text(
+                                  "Pizza",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: screenWidth * 0.035,
+                                  ),
                                 ),
                               ),
                             ),
@@ -269,25 +277,30 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: screenWidth * 0.035),
-                          child: Container(
-                            height: screenHeight * 0.05,
-                            width: screenWidth * 0.24,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.white70,
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MilkshakesPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: screenHeight * 0.05,
+                              width: screenWidth * 0.24,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white70,
+                                border: Border.all(color: Color(0xFFEDEDED)),
                               ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Sandwich",
-                                style: GoogleFonts.sen(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: screenWidth * 0.035,
+                              child: Center(
+                                child: Text(
+                                  "Milkshakes",
+                                  style: GoogleFonts.sen(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: screenWidth * 0.035,
+                                  ),
                                 ),
                               ),
                             ),
@@ -327,7 +340,7 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                     },
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 0.7,
+                        childAspectRatio: 0.85,
                         crossAxisCount: 2,
                         mainAxisSpacing: screenHeight * 0.01,
                         crossAxisSpacing: screenWidth * 0.02,
@@ -338,8 +351,16 @@ class _RestaruantViewPageState extends State<RestaruantViewPage> {
                       itemBuilder: (context, index) {
                         return Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white70,
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xFFFFFFFF),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.2),
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                offset: const Offset(1, 3),
+                              ),
+                            ],
                           ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
