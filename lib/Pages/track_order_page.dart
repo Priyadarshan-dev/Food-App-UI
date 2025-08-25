@@ -56,20 +56,15 @@ class _TrackOrderPageState extends State<TrackOrderPage> {
                     ],
                   ),
                   SizedBox(height: screenHeight * 0.020),
-                  Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(
-                          screenWidth * 0.025,
-                        ),
-                        child: Image.asset(
-                          "assets/images/location.png",
-                          height: screenHeight * 0.65,
-                          width: double.infinity,
-                          fit: BoxFit.contain, // keeps full image, no cutting
-                        ),
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(screenWidth * 0.025),
+                      child: Image.asset(
+                        "assets/images/location.png",
+                        width: double.infinity,
+                        fit: BoxFit.fill,
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
